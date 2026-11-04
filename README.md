@@ -33,3 +33,7 @@ I'm not an experienced Java developer, so some of my implementations may be inef
 The original project is licensed under the MIT License. This repository includes modifications to its source code and retains the applicable licensing notices.
 
 See the included `LICENSE` file for details.
+
+## Credits
+
+- Some level-up messages originate from [Tinkers' Tool Leveling](https://github.com/SlimeKnights/TinkersToolLeveling), originally released under the MIT License.
