@@ -1,5 +1,5 @@
 # tinkers-levelling-addon-modified
-This is a modified version of Tinkers' Levelling Addon 1.20.1 by Pyre.
+This is a modified version of Tinkers' Levelling Addon for Minecraft 1.20.1 by Pyre.
 
 This version is primarily intended for use in a modpack I'm currently developing. As such, it may depend on Construct's Casting and other mods, and might not function correctly without them.
 
