@@ -17,25 +17,53 @@ public class Config {
 
     private static final List<String> DEFAULT_ARMOR_SLOTS_ORDER = List.of(UPGRADE, DEFENSE, UPGRADE, ABILITY, DEFENSE);
     private static final List<String> DEFAULT_ARMOR_SLOTS_RANDOM_POOL = List.of(UPGRADE, UPGRADE, DEFENSE, DEFENSE, ABILITY);
+    private static final List<String> DEFAULT_BATTLESTAFF_SLOTS_ORDER = List.of(UPGRADE, UPGRADE, UPGRADE, ABILITY, BOON);
+    private static final List<String> DEFAULT_BATTLESTAFF_SLOTS_RANDOM_POOL = List.of(UPGRADE, UPGRADE, UPGRADE, BOON, ABILITY);
+    private static final List<String> DEFAULT_BREAKING_TOOL_SLOTS_ORDER = List.of(UPGRADE, UPGRADE, UPGRADE, ABILITY, UPGRADE);
+    private static final List<String> DEFAULT_BREAKING_TOOL_SLOTS_RANDOM_POOL = List.of(UPGRADE, UPGRADE, UPGRADE, UPGRADE, ABILITY);
+    private static final List<String> DEFAULT_DUAL_HEAVY_WEAPON_TOOL_SLOTS_ORDER = List.of(UPGRADE, UPGRADE, UPGRADE, ABILITY, UPGRADE);
+    private static final List<String> DEFAULT_DUAL_HEAVY_WEAPON_TOOL_SLOTS_RANDOM_POOL = List.of(UPGRADE, UPGRADE, UPGRADE, UPGRADE, ABILITY);
+    private static final List<String> DEFAULT_HEAVY_WEAPON_SLOTS_ORDER = List.of(UPGRADE, UPGRADE, UPGRADE, ABILITY, UPGRADE);
+    private static final List<String> DEFAULT_HEAVY_WEAPON_SLOTS_RANDOM_POOL = List.of(UPGRADE, UPGRADE, UPGRADE, UPGRADE, ABILITY);
+    private static final List<String> DEFAULT_LIGHT_WEAPON_SLOTS_ORDER = List.of(UPGRADE, UPGRADE, UPGRADE, ABILITY, UPGRADE);
+    private static final List<String> DEFAULT_LIGHT_WEAPON_SLOTS_RANDOM_POOL = List.of(UPGRADE, UPGRADE, UPGRADE, UPGRADE, ABILITY);
     private static final List<String> DEFAULT_RANGED_SLOTS_ORDER = List.of(UPGRADE, UPGRADE, UPGRADE, ABILITY, UPGRADE);
     private static final List<String> DEFAULT_RANGED_SLOTS_RANDOM_POOL = List.of(UPGRADE, UPGRADE, UPGRADE, UPGRADE, ABILITY);
     private static final List<String> DEFAULT_SHIELD_SLOTS_ORDER = List.of(UPGRADE, DEFENSE, UPGRADE, DEFENSE, ABILITY);
-    private static final List<String> DEFAULT_SHIELD_SLOTS_RANDOM_POOL = List.of(UPGRADE, DEFENSE, UPGRADE, DEFENSE, ABILITY);
+    private static final List<String> DEFAULT_SHIELD_SLOTS_RANDOM_POOL = List.of(UPGRADE, UPGRADE, DEFENSE, DEFENSE, ABILITY);
+    private static final List<String> DEFAULT_SPELLBOOK_SLOTS_ORDER = List.of(UPGRADE, UPGRADE, UPGRADE, ABILITY, BOON);
+    private static final List<String> DEFAULT_SPELLBOOK_SLOTS_RANDOM_POOL = List.of(UPGRADE, UPGRADE, UPGRADE, BOON, ABILITY);
     private static final List<String> DEFAULT_STAFF_SLOTS_ORDER = List.of(UPGRADE, UPGRADE, UPGRADE, DEFENSE, ABILITY);
     private static final List<String> DEFAULT_STAFF_SLOTS_RANDOM_POOL = List.of(UPGRADE, UPGRADE, UPGRADE, DEFENSE, ABILITY);
     private static final List<String> DEFAULT_TOOLS_SLOTS_ORDER = List.of(UPGRADE, UPGRADE, UPGRADE, ABILITY, UPGRADE);
     private static final List<String> DEFAULT_TOOLS_SLOTS_RANDOM_POOL = List.of(UPGRADE, UPGRADE, UPGRADE, UPGRADE, ABILITY);
+    private static final List<String> DEFAULT_WAND_SLOTS_ORDER = List.of(UPGRADE, UPGRADE, UPGRADE, ABILITY, BOON);
+    private static final List<String> DEFAULT_WAND_SLOTS_RANDOM_POOL = List.of(UPGRADE, UPGRADE, UPGRADE, BOON, ABILITY);
 
     private static final List<String> DEFAULT_ARMOR_STATS_ORDER = List.of(DURABILITY, ARMOR, ARMOR_TOUGHNESS, KNOCKBACK_RESISTANCE);
     private static final List<String> DEFAULT_ARMOR_STATS_RANDOM_POOL = List.of(DURABILITY, ARMOR, ARMOR_TOUGHNESS, KNOCKBACK_RESISTANCE);
+    private static final List<String> DEFAULT_BATTLESTAFF_STATS_ORDER = List.of(DURABILITY, ATTACK_DAMAGE, ATTACK_SPEED, MAX_MANA, SPELL_POWER);
+    private static final List<String> DEFAULT_BATTLESTAFF_STATS_RANDOM_POOL = List.of(DURABILITY, ATTACK_DAMAGE, ATTACK_SPEED, MAX_MANA, SPELL_POWER);
+    private static final List<String> DEFAULT_BREAKING_TOOL_STATS_ORDER = List.of(DURABILITY, MINING_SPEED);
+    private static final List<String> DEFAULT_BREAKING_TOOL_STATS_RANDOM_POOL = List.of(DURABILITY, MINING_SPEED, MINING_SPEED);
+    private static final List<String> DEFAULT_DUAL_HEAVY_WEAPON_TOOL_STATS_ORDER = List.of(DURABILITY, ATTACK_DAMAGE, MINING_SPEED);
+    private static final List<String> DEFAULT_DUAL_HEAVY_WEAPON_TOOL_STATS_RANDOM_POOL = List.of(DURABILITY, ATTACK_DAMAGE, MINING_SPEED);
+    private static final List<String> DEFAULT_HEAVY_WEAPON_STATS_ORDER = List.of(DURABILITY, ATTACK_DAMAGE, DURABILITY, ATTACK_DAMAGE, ATTACK_SPEED);
+    private static final List<String> DEFAULT_HEAVY_WEAPON_STATS_RANDOM_POOL = List.of(DURABILITY, DURABILITY, ATTACK_DAMAGE, ATTACK_DAMAGE, ATTACK_SPEED);
+    private static final List<String> DEFAULT_LIGHT_WEAPON_STATS_ORDER = List.of(DURABILITY, ATTACK_SPEED, ATTACK_DAMAGE);
+    private static final List<String> DEFAULT_LIGHT_WEAPON_STATS_RANDOM_POOL = List.of(DURABILITY, ATTACK_SPEED, ATTACK_DAMAGE);
     private static final List<String> DEFAULT_RANGED_STATS_ORDER = List.of(DURABILITY, DRAW_SPEED, VELOCITY, ACCURACY, PROJECTILE_DAMAGE);
     private static final List<String> DEFAULT_RANGED_STATS_RANDOM_POOL = List.of(DURABILITY, DRAW_SPEED, VELOCITY, ACCURACY, PROJECTILE_DAMAGE);
     private static final List<String> DEFAULT_SHIELD_STATS_ORDER = List.of(DURABILITY, BLOCK_AMOUNT, BLOCK_ANGLE, ARMOR_TOUGHNESS, KNOCKBACK_RESISTANCE);
     private static final List<String> DEFAULT_SHIELD_STATS_RANDOM_POOL = List.of(DURABILITY, BLOCK_AMOUNT, BLOCK_ANGLE, ARMOR_TOUGHNESS, KNOCKBACK_RESISTANCE);
+    private static final List<String> DEFAULT_SPELLBOOK_STATS_ORDER = List.of(MAX_MANA, SPELL_POWER, SPELL_SLOTS, MAX_MANA, COOLDOWN_REDUCTION);
+    private static final List<String> DEFAULT_SPELLBOOK_STATS_RANDOM_POOL = List.of(MAX_MANA, MAX_MANA, SPELL_POWER, SPELL_SLOTS, COOLDOWN_REDUCTION);
     private static final List<String> DEFAULT_STAFF_STATS_ORDER = List.of(DURABILITY, DRAW_SPEED, VELOCITY, ACCURACY, PROJECTILE_DAMAGE, ARMOR);
     private static final List<String> DEFAULT_STAFF_STATS_RANDOM_POOL = List.of(DURABILITY, DRAW_SPEED, VELOCITY, ACCURACY, PROJECTILE_DAMAGE, ARMOR);
     private static final List<String> DEFAULT_TOOLS_STATS_ORDER = List.of(DURABILITY, ATTACK_DAMAGE, ATTACK_SPEED, MINING_SPEED);
     private static final List<String> DEFAULT_TOOLS_STATS_RANDOM_POOL = List.of(DURABILITY, ATTACK_DAMAGE, ATTACK_SPEED, MINING_SPEED);
+    private static final List<String> DEFAULT_WAND_STATS_ORDER = List.of(MAX_MANA, SPELL_POWER, CASTING_SPEED, MAX_MANA, COOLDOWN_REDUCTION);
+    private static final List<String> DEFAULT_WAND_STATS_RANDOM_POOL = List.of(MAX_MANA, MAX_MANA, SPELL_POWER, CASTING_SPEED, COOLDOWN_REDUCTION);
 
     public static final ForgeConfigSpec SERVER_CONFIG;
     public static final ForgeConfigSpec CLIENT_CONFIG;
@@ -54,14 +82,28 @@ public class Config {
     //General
     public static ForgeConfigSpec.EnumValue<GainingMethod> armorSlotGainingMethod;
     public static ForgeConfigSpec.EnumValue<GainingMethod> armorStatGainingMethod;
+    public static ForgeConfigSpec.EnumValue<GainingMethod> battlestaffSlotGainingMethod;
+    public static ForgeConfigSpec.EnumValue<GainingMethod> battlestaffStatGainingMethod;
+    public static ForgeConfigSpec.EnumValue<GainingMethod> breakingToolSlotGainingMethod;
+    public static ForgeConfigSpec.EnumValue<GainingMethod> breakingToolStatGainingMethod;
+    public static ForgeConfigSpec.EnumValue<GainingMethod> dualHeavyWeaponToolSlotGainingMethod;
+    public static ForgeConfigSpec.EnumValue<GainingMethod> dualHeavyWeaponToolStatGainingMethod;
+    public static ForgeConfigSpec.EnumValue<GainingMethod> heavyWeaponSlotGainingMethod;
+    public static ForgeConfigSpec.EnumValue<GainingMethod> heavyWeaponStatGainingMethod;
+    public static ForgeConfigSpec.EnumValue<GainingMethod> lightWeaponSlotGainingMethod;
+    public static ForgeConfigSpec.EnumValue<GainingMethod> lightWeaponStatGainingMethod;
     public static ForgeConfigSpec.EnumValue<GainingMethod> rangedSlotGainingMethod;
     public static ForgeConfigSpec.EnumValue<GainingMethod> rangedStatGainingMethod;
     public static ForgeConfigSpec.EnumValue<GainingMethod> shieldSlotGainingMethod;
     public static ForgeConfigSpec.EnumValue<GainingMethod> shieldStatGainingMethod;
+    public static ForgeConfigSpec.EnumValue<GainingMethod> spellbookSlotGainingMethod;
+    public static ForgeConfigSpec.EnumValue<GainingMethod> spellbookStatGainingMethod;
     public static ForgeConfigSpec.EnumValue<GainingMethod> staffSlotGainingMethod;
     public static ForgeConfigSpec.EnumValue<GainingMethod> staffStatGainingMethod;
     public static ForgeConfigSpec.EnumValue<GainingMethod> toolsSlotGainingMethod;
     public static ForgeConfigSpec.EnumValue<GainingMethod> toolsStatGainingMethod;
+    public static ForgeConfigSpec.EnumValue<GainingMethod> wandSlotGainingMethod;
+    public static ForgeConfigSpec.EnumValue<GainingMethod> wandStatGainingMethod;
     public static ForgeConfigSpec.IntValue maxLevel;
     public static ForgeConfigSpec.IntValue baseExperience;
     public static ForgeConfigSpec.DoubleValue requiredXpMultiplier;
@@ -70,26 +112,54 @@ public class Config {
     //general.slots
     private static ForgeConfigSpec.ConfigValue<List<? extends String>> armorSlotTypeRandomPool;
     private static ForgeConfigSpec.ConfigValue<List<? extends String>> armorSlotTypeOrder;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> battlestaffSlotTypeRandomPool;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> battlestaffSlotTypeOrder;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> breakingToolSlotTypeRandomPool;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> breakingToolSlotTypeOrder;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> dualHeavyWeaponToolSlotTypeRandomPool;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> dualHeavyWeaponToolSlotTypeOrder;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> heavyWeaponSlotTypeRandomPool;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> heavyWeaponSlotTypeOrder;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> lightWeaponSlotTypeRandomPool;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> lightWeaponSlotTypeOrder;
     private static ForgeConfigSpec.ConfigValue<List<? extends String>> rangedSlotTypeRandomPool;
     private static ForgeConfigSpec.ConfigValue<List<? extends String>> rangedSlotTypeOrder;
     private static ForgeConfigSpec.ConfigValue<List<? extends String>> shieldSlotTypeRandomPool;
     private static ForgeConfigSpec.ConfigValue<List<? extends String>> shieldSlotTypeOrder;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> spellbookSlotTypeRandomPool;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> spellbookSlotTypeOrder;
     private static ForgeConfigSpec.ConfigValue<List<? extends String>> staffSlotTypeRandomPool;
     private static ForgeConfigSpec.ConfigValue<List<? extends String>> staffSlotTypeOrder;
     private static ForgeConfigSpec.ConfigValue<List<? extends String>> toolsSlotTypeRandomPool;
     private static ForgeConfigSpec.ConfigValue<List<? extends String>> toolsSlotTypeOrder;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> wandSlotTypeRandomPool;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> wandSlotTypeOrder;
 
     //general.stats
     private static ForgeConfigSpec.ConfigValue<List<? extends String>> armorStatTypeRandomPool;
     private static ForgeConfigSpec.ConfigValue<List<? extends String>> armorStatTypeOrder;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> battlestaffStatTypeRandomPool;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> battlestaffStatTypeOrder;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> breakingToolStatTypeRandomPool;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> breakingToolStatTypeOrder;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> dualHeavyWeaponToolStatTypeRandomPool;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> dualHeavyWeaponToolStatTypeOrder;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> heavyWeaponStatTypeRandomPool;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> heavyWeaponStatTypeOrder;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> lightWeaponStatTypeRandomPool;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> lightWeaponStatTypeOrder;
     private static ForgeConfigSpec.ConfigValue<List<? extends String>> rangedStatTypeRandomPool;
     private static ForgeConfigSpec.ConfigValue<List<? extends String>> rangedStatTypeOrder;
     private static ForgeConfigSpec.ConfigValue<List<? extends String>> shieldStatTypeRandomPool;
     private static ForgeConfigSpec.ConfigValue<List<? extends String>> shieldStatTypeOrder;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> spellbookStatTypeRandomPool;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> spellbookStatTypeOrder;
     private static ForgeConfigSpec.ConfigValue<List<? extends String>> staffStatTypeRandomPool;
     private static ForgeConfigSpec.ConfigValue<List<? extends String>> staffStatTypeOrder;
     private static ForgeConfigSpec.ConfigValue<List<? extends String>> toolsStatTypeRandomPool;
     private static ForgeConfigSpec.ConfigValue<List<? extends String>> toolsStatTypeOrder;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> wandStatTypeRandomPool;
+    private static ForgeConfigSpec.ConfigValue<List<? extends String>> wandStatTypeOrder;
 
     //general.stats.armorValues
     public static ForgeConfigSpec.DoubleValue armorArmorValue;
@@ -97,10 +167,36 @@ public class Config {
     public static ForgeConfigSpec.IntValue armorDurabilityValue;
     public static ForgeConfigSpec.DoubleValue armorKnockbackResistanceValue;
 
+    //general.stats.battlestaffValues
+    public static ForgeConfigSpec.DoubleValue battlestaffAttackDamageValue;
+    public static ForgeConfigSpec.DoubleValue battlestaffAttackSpeedValue;
+    public static ForgeConfigSpec.IntValue battlestaffDurabilityValue;
+    public static ForgeConfigSpec.DoubleValue battlestaffSpellPowerValue;
+    public static ForgeConfigSpec.IntValue battlestaffManaValue;
+
+    //general.stats.breakingTool
+    public static ForgeConfigSpec.IntValue breakingToolDurabilityValue;
+    public static ForgeConfigSpec.DoubleValue breakingToolMiningSpeedValue;
+
+    //general.stats.dualHeavyWeaponTool
+    public static ForgeConfigSpec.DoubleValue dualHeavyWeaponToolAttackDamageValue;
+    public static ForgeConfigSpec.IntValue dualHeavyWeaponToolDurabilityValue;
+    public static ForgeConfigSpec.DoubleValue dualHeavyWeaponToolMiningSpeedValue;
+
+    //general.stats.heavyWeapon
+    public static ForgeConfigSpec.DoubleValue heavyWeaponAttackDamageValue;
+    public static ForgeConfigSpec.DoubleValue heavyWeaponAttackSpeedValue;
+    public static ForgeConfigSpec.IntValue heavyWeaponDurabilityValue;
+
+    //general.stats.lightWeapon
+    public static ForgeConfigSpec.DoubleValue lightWeaponAttackDamageValue;
+    public static ForgeConfigSpec.DoubleValue lightWeaponAttackSpeedValue;
+    public static ForgeConfigSpec.IntValue lightWeaponDurabilityValue;
+
     //general.stats.rangedValues
     public static ForgeConfigSpec.DoubleValue rangedAccuracyValue;
-    public static ForgeConfigSpec.DoubleValue rangedAttackDamageValue;
-    public static ForgeConfigSpec.DoubleValue rangedAttackSpeedValue;
+    public static ForgeConfigSpec.DoubleValue rangedAttackDamageValue; //RM!!!
+    public static ForgeConfigSpec.DoubleValue rangedAttackSpeedValue;  //RM!!!
     public static ForgeConfigSpec.DoubleValue rangedDrawSpeedValue;
     public static ForgeConfigSpec.IntValue rangedDurabilityValue;
     public static ForgeConfigSpec.DoubleValue rangedProjectileDamageValue;
@@ -112,6 +208,12 @@ public class Config {
     public static ForgeConfigSpec.IntValue shieldBlockAngleValue;
     public static ForgeConfigSpec.IntValue shieldDurabilityValue;
     public static ForgeConfigSpec.DoubleValue shieldKnockbackResistanceValue;
+
+    //general.stats.spellbook
+    public static ForgeConfigSpec.DoubleValue spellbookSpellPowerValue;
+    public static ForgeConfigSpec.IntValue spellbookManaValue;
+    public static ForgeConfigSpec.IntValue spellbookSpellSlotsValue;
+    public static ForgeConfigSpec.DoubleValue spellbookCooldownReductionValue;
 
     //general.stats.staffValues
     public static ForgeConfigSpec.DoubleValue staffAccuracyValue;
@@ -126,6 +228,12 @@ public class Config {
     public static ForgeConfigSpec.DoubleValue toolAttackSpeedValue;
     public static ForgeConfigSpec.IntValue toolDurabilityValue;
     public static ForgeConfigSpec.DoubleValue toolMiningSpeedValue;
+
+    //general.stats.wand
+    public static ForgeConfigSpec.DoubleValue wandSpellPowerValue;
+    public static ForgeConfigSpec.IntValue wandManaValue;
+    public static ForgeConfigSpec.DoubleValue wandCooldownReductionValue;
+    public static ForgeConfigSpec.DoubleValue wandCastingSpeedValue;
 
     //toolLevelling
     public static ForgeConfigSpec.BooleanValue damageBlocked;
@@ -220,6 +328,26 @@ public class Config {
                 .translation("config.tinkerslevellingaddon.general.armor_slot_gaining_method")
                 .defineEnum("armorSlotGainingMethod", GainingMethod.PREDEFINED_ORDER, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
 
+        battlestaffSlotGainingMethod = builder.comment("Method of gaining modifier slots for battlestaffs.")
+                .translation("config.tinkerslevellingaddon.general.battlestaff_slot_gaining_method")
+                .defineEnum("battlestaffSlotGainingMethod", GainingMethod.PREDEFINED_ORDER, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
+
+        breakingToolSlotGainingMethod = builder.comment("Method of gaining modifier slots for mining tools.")
+                .translation("config.tinkerslevellingaddon.general.breaking_tool_slot_gaining_method") // To implement
+                .defineEnum("breakingToolSlotGainingMethod", GainingMethod.PREDEFINED_ORDER, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
+
+        dualHeavyWeaponToolSlotGainingMethod = builder.comment("Method of gaining modifier slots for tools useable as heavy weapons and for breaking blocks.")
+                .translation("config.tinkerslevellingaddon.general.dual_heavy_weapon_tool_slot_gaining_method") // To implement
+                .defineEnum("dualHeavyWeaponToolSlotGainingMethod", GainingMethod.PREDEFINED_ORDER, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
+
+        heavyWeaponSlotGainingMethod = builder.comment("Method of gaining modifier slots for heavy weapons.")
+                .translation("config.tinkerslevellingaddon.general.heavy_weapon_slot_gaining_method") // To implement
+                .defineEnum("heavyWeaponSlotGainingMethod", GainingMethod.PREDEFINED_ORDER, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
+
+        lightWeaponSlotGainingMethod = builder.comment("Method of gaining modifier slots for light weapons.")
+                .translation("config.tinkerslevellingaddon.general.light_weapon_slot_gaining_method") // To implement
+                .defineEnum("lightWeaponSlotGainingMethod", GainingMethod.PREDEFINED_ORDER, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
+
         rangedSlotGainingMethod = builder.comment("Method of gaining modifier slots for ranged weapons.")
                 .translation("config.tinkerslevellingaddon.general.ranged_slot_gaining_method")
                 .defineEnum("rangedSlotGainingMethod", GainingMethod.PREDEFINED_ORDER, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
@@ -227,6 +355,10 @@ public class Config {
         shieldSlotGainingMethod = builder.comment("Method of gaining modifier slots for shields.")
                 .translation("config.tinkerslevellingaddon.general.shield_slot_gaining_method")
                 .defineEnum("shieldSlotGainingMethod", GainingMethod.PREDEFINED_ORDER, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
+
+        spellbookSlotGainingMethod = builder.comment("Method of gaining modifier slots for spellbooks.")
+                .translation("config.tinkerslevellingaddon.general.spellbook_slot_gaining_method") // To implement
+                .defineEnum("spellbookSlotGainingMethod", GainingMethod.PREDEFINED_ORDER, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
 
         staffSlotGainingMethod = builder.comment("Method of gaining modifier slots for staffs.")
                 .translation("config.tinkerslevellingaddon.general.staff_slot_gaining_method")
@@ -236,41 +368,73 @@ public class Config {
                 .translation("config.tinkerslevellingaddon.general.tools_slot_gaining_method")
                 .defineEnum("toolsSlotGainingMethod", GainingMethod.PREDEFINED_ORDER, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
 
+        wandSlotGainingMethod = builder.comment("Method of gaining modifier slots for wands.")
+                .translation("config.tinkerslevellingaddon.general.wand_slot_gaining_method") // To implement
+                .defineEnum("wandSlotGainingMethod", GainingMethod.PREDEFINED_ORDER, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
+
         slotsConfig(builder);
 
         armorStatGainingMethod = builder.comment("Method of gaining stats for armor.")
                 .translation("config.tinkerslevellingaddon.general.armor_stat_gaining_method")
-                .defineEnum("armorStatGainingMethod", GainingMethod.NONE, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
+                .defineEnum("armorStatGainingMethod", GainingMethod.PREDEFINED_ORDER, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
+
+        battlestaffStatGainingMethod = builder.comment("Method of gaining modifier stats for battlestaffs.")
+                .translation("config.tinkerslevellingaddon.general.battlestaff_stat_gaining_method") // To implement
+                .defineEnum("battlestaffStatGainingMethod", GainingMethod.PREDEFINED_ORDER, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
+
+        breakingToolStatGainingMethod = builder.comment("Method of gaining modifier stats for mining tools.")
+                .translation("config.tinkerslevellingaddon.general.breaking_tool_stat_gaining_method") // To implement
+                .defineEnum("breakingToolStatGainingMethod", GainingMethod.PREDEFINED_ORDER, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
+
+        dualHeavyWeaponToolStatGainingMethod = builder.comment("Method of gaining modifier stats for tools useable as heavy weapons and for breaking blocks.")
+                .translation("config.tinkerslevellingaddon.general.dual_heavy_weapon_tool_stat_gaining_method") // To implement
+                .defineEnum("dualHeavyWeaponToolStatGainingMethod", GainingMethod.PREDEFINED_ORDER, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
+
+        heavyWeaponStatGainingMethod = builder.comment("Method of gaining modifier stats for heavy weapons.")
+                .translation("config.tinkerslevellingaddon.general.heavy_weapon_stat_gaining_method") // To implement
+                .defineEnum("heavyWeaponStatGainingMethod", GainingMethod.PREDEFINED_ORDER, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
+
+        lightWeaponStatGainingMethod = builder.comment("Method of gaining modifier stats for light weapons.")
+                .translation("config.tinkerslevellingaddon.general.light_weapon_stat_gaining_method") // To implement
+                .defineEnum("lightWeaponStatGainingMethod", GainingMethod.PREDEFINED_ORDER, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
 
         rangedStatGainingMethod = builder.comment("Method of gaining stats for tools.")
                 .translation("config.tinkerslevellingaddon.general.ranged_stat_gaining_method")
-                .defineEnum("rangedStatGainingMethod", GainingMethod.NONE, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
+                .defineEnum("rangedStatGainingMethod", GainingMethod.PREDEFINED_ORDER, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
 
         shieldStatGainingMethod = builder.comment("Method of gaining stats for shields.")
                 .translation("config.tinkerslevellingaddon.general.shield_stat_gaining_method")
-                .defineEnum("shieldStatGainingMethod", GainingMethod.NONE, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
+                .defineEnum("shieldStatGainingMethod", GainingMethod.PREDEFINED_ORDER, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
+
+        spellbookStatGainingMethod = builder.comment("Method of gaining modifier stats for spellbooks.")
+                .translation("config.tinkerslevellingaddon.general.spellbook_stat_gaining_method") // To implement
+                .defineEnum("spellbookStatGainingMethod", GainingMethod.PREDEFINED_ORDER, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
 
         staffStatGainingMethod = builder.comment("Method of gaining stats for staffs.")
                 .translation("config.tinkerslevellingaddon.general.staff_stat_gaining_method")
-                .defineEnum("staffStatGainingMethod", GainingMethod.NONE, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
+                .defineEnum("staffStatGainingMethod", GainingMethod.PREDEFINED_ORDER, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
 
         toolsStatGainingMethod = builder.comment("Method of gaining stats for tools.")
                 .translation("config.tinkerslevellingaddon.general.tools_stat_gaining_method")
-                .defineEnum("toolsStatGainingMethod", GainingMethod.NONE, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
+                .defineEnum("toolsStatGainingMethod", GainingMethod.PREDEFINED_ORDER, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
+
+        wandStatGainingMethod = builder.comment("Method of gaining modifier stats for wands.")
+                .translation("config.tinkerslevellingaddon.general.wand_stat_gaining_method") // To implement
+                .defineEnum("wandStatGainingMethod", GainingMethod.PREDEFINED_ORDER, EnumGetMethod.NAME_IGNORECASE, GainingMethod.values());
 
         statsConfig(builder);
 
         maxLevel = builder.comment("Maximum tool level that could be achieved. If set to 0 there is no upper limit.")
                 .translation("config.tinkerslevellingaddon.general.max_level")
-                .defineInRange("maxLevel", 5, 0, Integer.MAX_VALUE);
+                .defineInRange("maxLevel", 25, 0, Integer.MAX_VALUE);
 
         baseExperience = builder.comment("Base amount of experience required to reach next level.")
                 .translation("config.tinkerslevellingaddon.general.base_experience")
-                .defineInRange("baseExperience", 500, 1, Integer.MAX_VALUE);
+                .defineInRange("baseExperience", 200, 1, Integer.MAX_VALUE);
 
         requiredXpMultiplier = builder.comment("How much the amount of experience required to reach next level will be multiplied per level.")
                 .translation("config.tinkerslevellingaddon.general.required_xp_multiplier")
-                .defineInRange("requiredXpMultiplier", 2D, 1D, 10D);
+                .defineInRange("requiredXpMultiplier", 1.2D, 1D, 10D);
 
         broadToolRequiredXpMultiplier = builder.comment("Additional multiplier for broad tools for experience required to level up.")
                 .translation("config.tinkerslevellingaddon.general.broad_tool_required_xp_multiplier")
@@ -293,6 +457,66 @@ public class Config {
                         "Allowed values: " + String.join(", ", getArmorSlotTypes()))
                 .translation("config.tinkerslevellingaddon.general.modifiers.armor_slot_type_random_pool")
                 .defineList("armorSlotTypeRandomPool", DEFAULT_ARMOR_SLOTS_RANDOM_POOL, t -> getArmorSlotTypes().contains(t));
+
+        battlestaffSlotTypeOrder = builder.comment("List of modifier slot types (in order) that will be awarded when leveling up battlestaffs. If level is higher than list size the mod will start over.",
+                        "If empty default order will be used (" + String.join(", ", DEFAULT_BATTLESTAFF_SLOTS_ORDER) + ").",
+                        "Allowed values: " + String.join(", ", getBattlestaffSlotTypes()))
+                .translation("config.tinkerslevellingaddon.general.slots.battlestaff_slot_type_order")
+                .defineList("battlestaffSlotTypeOrder", DEFAULT_BATTLESTAFF_SLOTS_ORDER, t -> getBattlestaffSlotTypes().contains(t));
+
+        battlestaffSlotTypeRandomPool = builder.comment("Set of modifier slot types from which random slot will be awarded when leveling up battlestaffs.",
+                        "If empty default pool will be used (" + String.join(", ", DEFAULT_BATTLESTAFF_SLOTS_RANDOM_POOL) + ").",
+                        "Allowed values: " + String.join(", ", getBattlestaffSlotTypes()))
+                .translation("config.tinkerslevellingaddon.general.modifiers.battlestaff_slot_type_random_pool")
+                .defineList("battlestaffSlotTypeRandomPool", DEFAULT_BATTLESTAFF_SLOTS_RANDOM_POOL, t -> getBattlestaffSlotTypes().contains(t));
+
+        breakingToolSlotTypeOrder = builder.comment("List of modifier slot types (in order) that will be awarded when leveling up mining tools. If level is higher than list size the mod will start over.",
+                        "If empty default order will be used (" + String.join(", ", DEFAULT_BREAKING_TOOL_SLOTS_ORDER) + ").",
+                        "Allowed values: " + String.join(", ", getBreakingToolSlotTypes()))
+                .translation("config.tinkerslevellingaddon.general.slots.breakingTool_slot_type_order")
+                .defineList("breakingToolSlotTypeOrder", DEFAULT_BREAKING_TOOL_SLOTS_ORDER, t -> getBreakingToolSlotTypes().contains(t));
+
+        breakingToolSlotTypeRandomPool = builder.comment("Set of modifier slot types from which random slot will be awarded when leveling up mining tools.",
+                        "If empty default pool will be used (" + String.join(", ", DEFAULT_BREAKING_TOOL_SLOTS_RANDOM_POOL) + ").",
+                        "Allowed values: " + String.join(", ", getBreakingToolSlotTypes()))
+                .translation("config.tinkerslevellingaddon.general.modifiers.breakingTool_slot_type_random_pool")
+                .defineList("breakingToolSlotTypeRandomPool", DEFAULT_BREAKING_TOOL_SLOTS_RANDOM_POOL, t -> getBreakingToolSlotTypes().contains(t));
+
+        dualHeavyWeaponToolSlotTypeOrder = builder.comment("List of modifier slot types (in order) that will be awarded when leveling up tools useable as heavy weapons and for breaking blocks. If level is higher than list size the mod will start over.",
+                        "If empty default order will be used (" + String.join(", ", DEFAULT_DUAL_HEAVY_WEAPON_TOOL_SLOTS_ORDER) + ").",
+                        "Allowed values: " + String.join(", ", getDualHeavyWeaponToolSlotTypes()))
+                .translation("config.tinkerslevellingaddon.general.slots.dualHeavyWeaponTool_slot_type_order")
+                .defineList("dualHeavyWeaponToolSlotTypeOrder", DEFAULT_DUAL_HEAVY_WEAPON_TOOL_SLOTS_ORDER, t -> getDualHeavyWeaponToolSlotTypes().contains(t));
+
+        dualHeavyWeaponToolSlotTypeRandomPool = builder.comment("Set of modifier slot types from which random slot will be awarded when leveling up tools useable as heavy weapons and for breaking blocks.",
+                        "If empty default pool will be used (" + String.join(", ", DEFAULT_DUAL_HEAVY_WEAPON_TOOL_SLOTS_RANDOM_POOL) + ").",
+                        "Allowed values: " + String.join(", ", getDualHeavyWeaponToolSlotTypes()))
+                .translation("config.tinkerslevellingaddon.general.modifiers.dualHeavyWeaponTool_slot_type_random_pool")
+                .defineList("dualHeavyWeaponToolSlotTypeRandomPool", DEFAULT_DUAL_HEAVY_WEAPON_TOOL_SLOTS_RANDOM_POOL, t -> getDualHeavyWeaponToolSlotTypes().contains(t));
+
+        heavyWeaponSlotTypeOrder = builder.comment("List of modifier slot types (in order) that will be awarded when leveling up heavy weapons. If level is higher than list size the mod will start over.",
+                        "If empty default order will be used (" + String.join(", ", DEFAULT_HEAVY_WEAPON_SLOTS_ORDER) + ").",
+                        "Allowed values: " + String.join(", ", getHeavyWeaponSlotTypes()))
+                .translation("config.tinkerslevellingaddon.general.slots.heavyWeapon_slot_type_order")
+                .defineList("heavyWeaponSlotTypeOrder", DEFAULT_HEAVY_WEAPON_SLOTS_ORDER, t -> getHeavyWeaponSlotTypes().contains(t));
+
+        heavyWeaponSlotTypeRandomPool = builder.comment("Set of modifier slot types from which random slot will be awarded when leveling up heavy weapons.",
+                        "If empty default pool will be used (" + String.join(", ", DEFAULT_HEAVY_WEAPON_SLOTS_RANDOM_POOL) + ").",
+                        "Allowed values: " + String.join(", ", getHeavyWeaponSlotTypes()))
+                .translation("config.tinkerslevellingaddon.general.modifiers.heavyWeapon_slot_type_random_pool")
+                .defineList("heavyWeaponSlotTypeRandomPool", DEFAULT_HEAVY_WEAPON_SLOTS_RANDOM_POOL, t -> getHeavyWeaponSlotTypes().contains(t));
+
+        lightWeaponSlotTypeOrder = builder.comment("List of modifier slot types (in order) that will be awarded when leveling up light weapons. If level is higher than list size the mod will start over.",
+                        "If empty default order will be used (" + String.join(", ", DEFAULT_LIGHT_WEAPON_SLOTS_ORDER) + ").",
+                        "Allowed values: " + String.join(", ", getLightWeaponSlotTypes()))
+                .translation("config.tinkerslevellingaddon.general.slots.lightWeapon_slot_type_order")
+                .defineList("lightWeaponSlotTypeOrder", DEFAULT_LIGHT_WEAPON_SLOTS_ORDER, t -> getLightWeaponSlotTypes().contains(t));
+
+        lightWeaponSlotTypeRandomPool = builder.comment("Set of modifier slot types from which random slot will be awarded when leveling up light weapons.",
+                        "If empty default pool will be used (" + String.join(", ", DEFAULT_LIGHT_WEAPON_SLOTS_RANDOM_POOL) + ").",
+                        "Allowed values: " + String.join(", ", getLightWeaponSlotTypes()))
+                .translation("config.tinkerslevellingaddon.general.modifiers.lightWeapon_slot_type_random_pool")
+                .defineList("lightWeaponSlotTypeRandomPool", DEFAULT_LIGHT_WEAPON_SLOTS_RANDOM_POOL, t -> getLightWeaponSlotTypes().contains(t));
 
         rangedSlotTypeOrder = builder.comment("List of modifier slot types (in order) that will be awarded when leveling up ranged weapons. If level is higher than list size the mod will start over.",
                         "If empty default order will be used (" + String.join(", ", DEFAULT_RANGED_SLOTS_ORDER) + ").",
@@ -318,6 +542,18 @@ public class Config {
                 .translation("config.tinkerslevellingaddon.general.modifiers.shield_slot_type_random_pool")
                 .defineList("shieldSlotTypeRandomPool", DEFAULT_SHIELD_SLOTS_RANDOM_POOL, t -> getShieldSlotTypes().contains(t));
 
+        spellbookSlotTypeOrder = builder.comment("List of modifier slot types (in order) that will be awarded when leveling up spellbooks. If level is higher than list size the mod will start over.",
+                        "If empty default order will be used (" + String.join(", ", DEFAULT_SPELLBOOK_SLOTS_ORDER) + ").",
+                        "Allowed values: " + String.join(", ", getSpellbookSlotTypes()))
+                .translation("config.tinkerslevellingaddon.general.slots.spellbook_slot_type_order")
+                .defineList("spellbookSlotTypeOrder", DEFAULT_SPELLBOOK_SLOTS_ORDER, t -> getSpellbookSlotTypes().contains(t));
+
+        spellbookSlotTypeRandomPool = builder.comment("Set of modifier slot types from which random slot will be awarded when leveling up spellbooks.",
+                        "If empty default pool will be used (" + String.join(", ", DEFAULT_SPELLBOOK_SLOTS_RANDOM_POOL) + ").",
+                        "Allowed values: " + String.join(", ", getSpellbookSlotTypes()))
+                .translation("config.tinkerslevellingaddon.general.modifiers.spellbook_slot_type_random_pool")
+                .defineList("spellbookSlotTypeRandomPool", DEFAULT_SPELLBOOK_SLOTS_RANDOM_POOL, t -> getSpellbookSlotTypes().contains(t));
+
         staffSlotTypeOrder = builder.comment("List of modifier slot types (in order) that will be awarded when leveling up staffs. If level is higher than list size the mod will start over.",
                         "If empty default order will be used (" + String.join(", ", DEFAULT_STAFF_SLOTS_ORDER) + ").",
                         "Allowed values: " + String.join(", ", getStaffSlotTypes()))
@@ -342,6 +578,18 @@ public class Config {
                 .translation("config.tinkerslevellingaddon.general.slots.tools_slot_type_random_pool")
                 .defineList("toolsSlotTypeRandomPool", DEFAULT_TOOLS_SLOTS_RANDOM_POOL, t -> getToolSlotTypes().contains(t));
 
+        wandSlotTypeOrder = builder.comment("List of modifier slot types (in order) that will be awarded when leveling up wands. If level is higher than list size the mod will start over.",
+                        "If empty default order will be used (" + String.join(", ", DEFAULT_WAND_SLOTS_ORDER) + ").",
+                        "Allowed values: " + String.join(", ", getWandSlotTypes()))
+                .translation("config.tinkerslevellingaddon.general.slots.wand_slot_type_order")
+                .defineList("wandSlotTypeOrder", DEFAULT_WAND_SLOTS_ORDER, t -> getWandSlotTypes().contains(t));
+
+        wandSlotTypeRandomPool = builder.comment("Set of modifier slot types from which random slot will be awarded when leveling up wands.",
+                        "If empty default pool will be used (" + String.join(", ", DEFAULT_WAND_SLOTS_RANDOM_POOL) + ").",
+                        "Allowed values: " + String.join(", ", getWandSlotTypes()))
+                .translation("config.tinkerslevellingaddon.general.modifiers.wand_slot_type_random_pool")
+                .defineList("wandSlotTypeRandomPool", DEFAULT_WAND_SLOTS_RANDOM_POOL, t -> getWandSlotTypes().contains(t));
+
         builder.pop();
     }
 
@@ -361,6 +609,76 @@ public class Config {
                 .defineList("armorStatTypeRandomPool", DEFAULT_ARMOR_STATS_RANDOM_POOL, t -> getArmorStatTypes().contains(t));
 
         armorStatsValuesConfig(builder);
+
+        battlestaffStatTypeOrder = builder.comment("List of stat types (in order) that will be awarded when leveling up battlestaffs. If level is higher than list size the mod will start over.",
+                        "If empty default order will be used (" + String.join(", ", DEFAULT_BATTLESTAFF_STATS_ORDER) + ").",
+                        "Allowed values: " + String.join(", ", getBattlestaffStatTypes()))
+                .translation("config.tinkerslevellingaddon.general.stats.battlestaff_stat_type_order")
+                .defineList("battlestaffStatTypeOrder", DEFAULT_BATTLESTAFF_STATS_ORDER, t -> getBattlestaffStatTypes().contains(t));
+
+        battlestaffStatTypeRandomPool = builder.comment("Set of stat types from which random stat will be awarded when leveling up battlestaffs.",
+                        "If empty default pool will be used (" + String.join(", ", DEFAULT_BATTLESTAFF_STATS_RANDOM_POOL) + ").",
+                        "Allowed values: " + String.join(", ", getBattlestaffStatTypes()))
+                .translation("config.tinkerslevellingaddon.general.stats.battlestaff_stat_type_random_pool")
+                .defineList("battlestaffStatTypeRandomPool", DEFAULT_BATTLESTAFF_STATS_RANDOM_POOL, t -> getBattlestaffStatTypes().contains(t));
+
+        battlestaffStatsValuesConfig(builder);
+
+        breakingToolStatTypeOrder = builder.comment("List of stat types (in order) that will be awarded when leveling up mining tools. If level is higher than list size the mod will start over.",
+                        "If empty default order will be used (" + String.join(", ", DEFAULT_BREAKING_TOOL_STATS_ORDER) + ").",
+                        "Allowed values: " + String.join(", ", getBreakingToolStatTypes()))
+                .translation("config.tinkerslevellingaddon.general.stats.breakingTool_stat_type_order")
+                .defineList("breakingToolStatTypeOrder", DEFAULT_BREAKING_TOOL_STATS_ORDER, t -> getBreakingToolStatTypes().contains(t));
+
+        breakingToolStatTypeRandomPool = builder.comment("Set of stat types from which random stat will be awarded when leveling up mining tools.",
+                        "If empty default pool will be used (" + String.join(", ", DEFAULT_BREAKING_TOOL_STATS_RANDOM_POOL) + ").",
+                        "Allowed values: " + String.join(", ", getBreakingToolStatTypes()))
+                .translation("config.tinkerslevellingaddon.general.stats.breakingTool_stat_type_random_pool")
+                .defineList("breakingToolStatTypeRandomPool", DEFAULT_BREAKING_TOOL_STATS_RANDOM_POOL, t -> getBreakingToolStatTypes().contains(t));
+
+        breakingToolStatsValuesConfig(builder);
+
+        dualHeavyWeaponToolStatTypeOrder = builder.comment("List of stat types (in order) that will be awarded when leveling up tools useable as heavy weapons and for breaking blocks. If level is higher than list size the mod will start over.",
+                        "If empty default order will be used (" + String.join(", ", DEFAULT_DUAL_HEAVY_WEAPON_TOOL_STATS_ORDER) + ").",
+                        "Allowed values: " + String.join(", ", getDualHeavyWeaponToolStatTypes()))
+                .translation("config.tinkerslevellingaddon.general.stats.dualHeavyWeaponTool_stat_type_order")
+                .defineList("dualHeavyWeaponToolStatTypeOrder", DEFAULT_DUAL_HEAVY_WEAPON_TOOL_STATS_ORDER, t -> getDualHeavyWeaponToolStatTypes().contains(t));
+
+        dualHeavyWeaponToolStatTypeRandomPool = builder.comment("Set of stat types from which random stat will be awarded when leveling up tools useable as heavy weapons and for breaking blocks.",
+                        "If empty default pool will be used (" + String.join(", ", DEFAULT_DUAL_HEAVY_WEAPON_TOOL_STATS_RANDOM_POOL) + ").",
+                        "Allowed values: " + String.join(", ", getDualHeavyWeaponToolStatTypes()))
+                .translation("config.tinkerslevellingaddon.general.stats.dualHeavyWeaponTool_stat_type_random_pool")
+                .defineList("dualHeavyWeaponToolStatTypeRandomPool", DEFAULT_DUAL_HEAVY_WEAPON_TOOL_STATS_RANDOM_POOL, t -> getDualHeavyWeaponToolStatTypes().contains(t));
+
+        dualHeavyWeaponToolStatsValuesConfig(builder);
+
+        heavyWeaponStatTypeOrder = builder.comment("List of stat types (in order) that will be awarded when leveling up heavy weapons. If level is higher than list size the mod will start over.",
+                        "If empty default order will be used (" + String.join(", ", DEFAULT_HEAVY_WEAPON_STATS_ORDER) + ").",
+                        "Allowed values: " + String.join(", ", getHeavyWeaponStatTypes()))
+                .translation("config.tinkerslevellingaddon.general.stats.heavyWeapon_stat_type_order")
+                .defineList("heavyWeaponStatTypeOrder", DEFAULT_HEAVY_WEAPON_STATS_ORDER, t -> getHeavyWeaponStatTypes().contains(t));
+
+        heavyWeaponStatTypeRandomPool = builder.comment("Set of stat types from which random stat will be awarded when leveling up heavy weapons.",
+                        "If empty default pool will be used (" + String.join(", ", DEFAULT_HEAVY_WEAPON_STATS_RANDOM_POOL) + ").",
+                        "Allowed values: " + String.join(", ", getHeavyWeaponStatTypes()))
+                .translation("config.tinkerslevellingaddon.general.stats.heavyWeapon_stat_type_random_pool")
+                .defineList("heavyWeaponStatTypeRandomPool", DEFAULT_HEAVY_WEAPON_STATS_RANDOM_POOL, t -> getHeavyWeaponStatTypes().contains(t));
+
+        heavyWeaponStatsValuesConfig(builder);
+
+        lightWeaponStatTypeOrder = builder.comment("List of stat types (in order) that will be awarded when leveling up light weapons. If level is higher than list size the mod will start over.",
+                        "If empty default order will be used (" + String.join(", ", DEFAULT_LIGHT_WEAPON_STATS_ORDER) + ").",
+                        "Allowed values: " + String.join(", ", getLightWeaponStatTypes()))
+                .translation("config.tinkerslevellingaddon.general.stats.lightWeapon_stat_type_order")
+                .defineList("lightWeaponStatTypeOrder", DEFAULT_LIGHT_WEAPON_STATS_ORDER, t -> getLightWeaponStatTypes().contains(t));
+
+        lightWeaponStatTypeRandomPool = builder.comment("Set of stat types from which random stat will be awarded when leveling up light weapons.",
+                        "If empty default pool will be used (" + String.join(", ", DEFAULT_LIGHT_WEAPON_STATS_RANDOM_POOL) + ").",
+                        "Allowed values: " + String.join(", ", getLightWeaponStatTypes()))
+                .translation("config.tinkerslevellingaddon.general.stats.lightWeapon_stat_type_random_pool")
+                .defineList("lightWeaponStatTypeRandomPool", DEFAULT_LIGHT_WEAPON_STATS_RANDOM_POOL, t -> getLightWeaponStatTypes().contains(t));
+
+        lightWeaponStatsValuesConfig(builder);
 
         rangedStatTypeOrder = builder.comment("List of stat types (in order) that will be awarded when leveling up ranged weapons. If level is higher than list size the mod will start over.",
                         "If empty default rotation will be used (" + String.join(", ", DEFAULT_RANGED_STATS_ORDER) + ").",
@@ -390,6 +708,20 @@ public class Config {
 
         shieldStatsValuesConfig(builder);
 
+        spellbookStatTypeOrder = builder.comment("List of stat types (in order) that will be awarded when leveling up spellbooks. If level is higher than list size the mod will start over.",
+                        "If empty default order will be used (" + String.join(", ", DEFAULT_SPELLBOOK_STATS_ORDER) + ").",
+                        "Allowed values: " + String.join(", ", getSpellbookStatTypes()))
+                .translation("config.tinkerslevellingaddon.general.stats.spellbook_stat_type_order")
+                .defineList("spellbookStatTypeOrder", DEFAULT_SPELLBOOK_STATS_ORDER, t -> getSpellbookStatTypes().contains(t));
+
+        spellbookStatTypeRandomPool = builder.comment("Set of stat types from which random stat will be awarded when leveling up spellbooks.",
+                        "If empty default pool will be used (" + String.join(", ", DEFAULT_SPELLBOOK_STATS_RANDOM_POOL) + ").",
+                        "Allowed values: " + String.join(", ", getSpellbookStatTypes()))
+                .translation("config.tinkerslevellingaddon.general.stats.spellbook_stat_type_random_pool")
+                .defineList("spellbookStatTypeRandomPool", DEFAULT_SPELLBOOK_STATS_RANDOM_POOL, t -> getSpellbookStatTypes().contains(t));
+
+        spellbookStatsValuesConfig(builder);
+
         staffStatTypeOrder = builder.comment("List of stat types (in order) that will be awarded when leveling up staffs. If level is higher than list size the mod will start over.",
                         "If empty default order will be used (" + String.join(", ", DEFAULT_STAFF_STATS_ORDER) + ").",
                         "Allowed values: " + String.join(", ", getStaffStatTypes()))
@@ -418,6 +750,20 @@ public class Config {
 
         toolStatsValuesConfig(builder);
 
+        wandStatTypeOrder = builder.comment("List of stat types (in order) that will be awarded when leveling up wands. If level is higher than list size the mod will start over.",
+                        "If empty default order will be used (" + String.join(", ", DEFAULT_WAND_STATS_ORDER) + ").",
+                        "Allowed values: " + String.join(", ", getWandStatTypes()))
+                .translation("config.tinkerslevellingaddon.general.stats.wand_stat_type_order")
+                .defineList("wandStatTypeOrder", DEFAULT_WAND_STATS_ORDER, t -> getWandStatTypes().contains(t));
+
+        wandStatTypeRandomPool = builder.comment("Set of stat types from which random stat will be awarded when leveling up wands.",
+                        "If empty default pool will be used (" + String.join(", ", DEFAULT_WAND_STATS_RANDOM_POOL) + ").",
+                        "Allowed values: " + String.join(", ", getWandStatTypes()))
+                .translation("config.tinkerslevellingaddon.general.stats.wand_stat_type_random_pool")
+                .defineList("wandStatTypeRandomPool", DEFAULT_WAND_STATS_RANDOM_POOL, t -> getWandStatTypes().contains(t));
+
+        wandStatsValuesConfig(builder);
+
         builder.pop();
     }
 
@@ -435,6 +781,84 @@ public class Config {
 
         armorKnockbackResistanceValue = builder.translation("tooltip.tinkerslevellingaddon.stats.knockback_resistance")
                 .defineInRange(KNOCKBACK_RESISTANCE, 0.1D, 0.1D, 1D);
+
+        builder.pop();
+    }
+
+    private static void battlestaffStatsValuesConfig(ForgeConfigSpec.Builder builder) {
+        builder.comment("Battlestaff stat values rewarded on level ups").push("battlestaffValues");
+
+        battlestaffAttackDamageValue = builder.translation("tooltip.tinkerslevellingaddon.stats.attack_damage")
+                .defineInRange(ATTACK_DAMAGE, 0.5D, 0.1D, 10D);
+
+        battlestaffAttackSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stats.attack_speed")
+                .defineInRange(ATTACK_SPEED, 0.25D, 0.1D, 10D);
+
+        battlestaffDurabilityValue = builder.translation("tooltip.tinkerslevellingaddon.stats.durability")
+                .defineInRange(DURABILITY, 50, 1, 1000);
+
+        battlestaffSpellPowerValue = builder.translation("tooltip.tinkerslevellingaddon.stats.spell_power") // to implement
+                .defineInRange(SPELL_POWER, 0.05D, 0.1D, 1D);
+
+        battlestaffManaValue = builder.translation("tooltip.tinkerslevellingaddon.stats.max_mana") // to implement
+                .defineInRange(MAX_MANA, 50, 1, 1000);
+
+        builder.pop();
+    }
+
+    private static void breakingToolStatsValuesConfig(ForgeConfigSpec.Builder builder) {
+        builder.comment("Mining tool stat values rewarded on level ups").push("breakingToolValues");
+
+        breakingToolDurabilityValue = builder.translation("tooltip.tinkerslevellingaddon.stats.mining_speed")
+                .defineInRange(MINING_SPEED, 1D, 0.1D, 10D);
+
+        breakingToolMiningSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stats.durability")
+                .defineInRange(DURABILITY, 50, 1, 1000);
+
+        builder.pop();
+    }
+
+    private static void dualHeavyWeaponToolStatsValuesConfig(ForgeConfigSpec.Builder builder) {
+        builder.comment("Stat values rewarded on level ups for tools useable as heavy weapons and for breaking blocks").push("dualHeavyWeaponToolValues");
+
+        dualHeavyWeaponToolAttackDamageValue = builder.translation("tooltip.tinkerslevellingaddon.stats.attack_damage")
+                .defineInRange(ATTACK_DAMAGE, 0.5D, 0.1D, 10D);
+
+        dualHeavyWeaponToolDurabilityValue = builder.translation("tooltip.tinkerslevellingaddon.stats.mining_speed")
+                .defineInRange(MINING_SPEED, 1D, 0.1D, 10D);
+
+        dualHeavyWeaponToolMiningSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stats.durability")
+                .defineInRange(DURABILITY, 50, 1, 1000);
+
+        builder.pop();
+    }
+
+    private static void heavyWeaponStatsValuesConfig(ForgeConfigSpec.Builder builder) {
+        builder.comment("Heavy weapon stat values rewarded on level ups").push("heavyWeaponValues");
+
+        heavyWeaponAttackDamageValue = builder.translation("tooltip.tinkerslevellingaddon.stats.attack_damage")
+                .defineInRange(ATTACK_DAMAGE, 0.5D, 0.1D, 10D);
+
+        heavyWeaponAttackSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stats.attack_speed")
+                .defineInRange(ATTACK_SPEED, 0.25D, 0.1D, 10D);
+
+        heavyWeaponDurabilityValue = builder.translation("tooltip.tinkerslevellingaddon.stats.durability")
+                .defineInRange(DURABILITY, 50, 1, 1000);
+
+        builder.pop();
+    }
+
+    private static void lightWeaponStatsValuesConfig(ForgeConfigSpec.Builder builder) {
+        builder.comment("Light weapon stat values rewarded on level ups").push("lightWeaponValues");
+
+        lightWeaponAttackDamageValue = builder.translation("tooltip.tinkerslevellingaddon.stats.attack_damage")
+                .defineInRange(ATTACK_DAMAGE, 0.5D, 0.1D, 10D);
+
+        lightWeaponAttackSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stats.attack_speed")
+                .defineInRange(ATTACK_SPEED, 0.25D, 0.1D, 10D);
+
+        lightWeaponDurabilityValue = builder.translation("tooltip.tinkerslevellingaddon.stats.durability")
+                .defineInRange(DURABILITY, 50, 1, 1000);
 
         builder.pop();
     }
@@ -487,6 +911,24 @@ public class Config {
         builder.pop();
     }
 
+    private static void spellbookStatsValuesConfig(ForgeConfigSpec.Builder builder) {
+        builder.comment("Spellbook stat values rewarded on level ups").push("spellbookValues");
+
+        spellbookSpellPowerValue = builder.translation("tooltip.tinkerslevellingaddon.stats.spell_power") // to implement
+                .defineInRange(SPELL_POWER, 0.05D, 0.1D, 10D);
+
+        spellbookManaValue = builder.translation("tooltip.tinkerslevellingaddon.stats.max_mana") // to implement
+                .defineInRange(MAX_MANA, 50, 1, 1000);
+
+        spellbookSpellSlotsValue = builder.translation("tooltip.tinkerslevellingaddon.stats.spell_slots") // to implement
+                .defineInRange(SPELL_SLOTS, 1, 1, 3);
+
+        spellbookCooldownReductionValue = builder.translation("tooltip.tinkerslevellingaddon.stat.cooldown_reduction") // to implement
+                .defineInRange(COOLDOWN_REDUCTION, 0.05D, 0.1D, 10D);
+
+        builder.pop();
+    }
+
     private static void staffStatsValuesConfig(ForgeConfigSpec.Builder builder) {
         builder.comment("Staff stat values rewarded on level ups").push("staffValues");
 
@@ -525,6 +967,24 @@ public class Config {
 
         toolMiningSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stats.mining_speed")
                 .defineInRange(MINING_SPEED, 1D, 0.1D, 10D);
+
+        builder.pop();
+    }
+
+    private static void wandStatsValuesConfig(ForgeConfigSpec.Builder builder) {
+        builder.comment("Wand stat values rewarded on level ups").push("spellbookValues");
+
+        wandSpellPowerValue = builder.translation("tooltip.tinkerslevellingaddon.stats.spell_power") // to implement
+                .defineInRange(SPELL_POWER, 0.05D, 0.1D, 10D);
+
+        wandManaValue = builder.translation("tooltip.tinkerslevellingaddon.stats.max_mana") // to implement
+                .defineInRange(MAX_MANA, 50, 1, 1000);
+
+        wandCastingSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stats.spell_slots") // to implement
+                .defineInRange(CASTING_SPEED, 0.05D, 0.1D, 10D);
+
+        wandCooldownReductionValue = builder.translation("tooltip.tinkerslevellingaddon.stat.cooldown_reduction") // to implement
+                .defineInRange(COOLDOWN_REDUCTION, 0.05D, 0.1D, 10D);
 
         builder.pop();
     }
@@ -869,6 +1329,166 @@ public class Config {
         return (List<String>) statsRandomPool;
     }
 
+    public static List<String> getBattlestaffSlotsOrder() {
+        List<? extends String> slotsOrder = battlestaffSlotTypeOrder.get();
+        if (slotsOrder.isEmpty()) {
+            slotsOrder = DEFAULT_BATTLESTAFF_SLOTS_ORDER;
+        }
+        return (List<String>) slotsOrder;
+    }
+
+    public static List<String> getBattlestaffSlotsRandomPool() {
+        List<? extends String> slotsRandomPool = battlestaffSlotTypeRandomPool.get();
+        if (slotsRandomPool.isEmpty()) {
+            slotsRandomPool = DEFAULT_BATTLESTAFF_SLOTS_RANDOM_POOL;
+        }
+        return (List<String>) slotsRandomPool;
+    }
+
+    public static List<String> getBattlestaffStatsOrder() {
+        List<? extends String> statsOrder = battlestaffStatTypeOrder.get();
+        if (statsOrder.isEmpty()) {
+            statsOrder = DEFAULT_BATTLESTAFF_STATS_ORDER;
+        }
+        return (List<String>) statsOrder;
+    }
+
+    public static List<String> getBattlestaffStatsRandomPool() {
+        List<? extends String> statsRandomPool = battlestaffStatTypeRandomPool.get();
+        if (statsRandomPool.isEmpty()) {
+            statsRandomPool = DEFAULT_BATTLESTAFF_STATS_RANDOM_POOL;
+        }
+        return (List<String>) statsRandomPool;
+    }
+
+    public static List<String> getBreakingToolSlotsOrder() {
+        List<? extends String> slotsOrder = breakingToolSlotTypeOrder.get();
+        if (slotsOrder.isEmpty()) {
+            slotsOrder = DEFAULT_BREAKING_TOOL_SLOTS_ORDER;
+        }
+        return (List<String>) slotsOrder;
+    }
+
+    public static List<String> getBreakingToolSlotsRandomPool() {
+        List<? extends String> slotsRandomPool = breakingToolSlotTypeRandomPool.get();
+        if (slotsRandomPool.isEmpty()) {
+            slotsRandomPool = DEFAULT_BREAKING_TOOL_SLOTS_RANDOM_POOL;
+        }
+        return (List<String>) slotsRandomPool;
+    }
+
+    public static List<String> getBreakingToolStatsOrder() {
+        List<? extends String> statsOrder = breakingToolStatTypeOrder.get();
+        if (statsOrder.isEmpty()) {
+            statsOrder = DEFAULT_BREAKING_TOOL_STATS_ORDER;
+        }
+        return (List<String>) statsOrder;
+    }
+
+    public static List<String> getBreakingToolStatsRandomPool() {
+        List<? extends String> statsRandomPool = breakingToolStatTypeRandomPool.get();
+        if (statsRandomPool.isEmpty()) {
+            statsRandomPool = DEFAULT_BREAKING_TOOL_STATS_RANDOM_POOL;
+        }
+        return (List<String>) statsRandomPool;
+    }
+
+    public static List<String> getDualHeavyWeaponToolSlotsOrder() {
+        List<? extends String> slotsOrder = dualHeavyWeaponToolSlotTypeOrder.get();
+        if (slotsOrder.isEmpty()) {
+            slotsOrder = DEFAULT_DUAL_HEAVY_WEAPON_TOOL_SLOTS_ORDER;
+        }
+        return (List<String>) slotsOrder;
+    }
+
+    public static List<String> getDualHeavyWeaponToolSlotsRandomPool() {
+        List<? extends String> slotsRandomPool = dualHeavyWeaponToolSlotTypeRandomPool.get();
+        if (slotsRandomPool.isEmpty()) {
+            slotsRandomPool = DEFAULT_DUAL_HEAVY_WEAPON_TOOL_SLOTS_RANDOM_POOL;
+        }
+        return (List<String>) slotsRandomPool;
+    }
+
+    public static List<String> getDualHeavyWeaponToolStatsOrder() {
+        List<? extends String> statsOrder = dualHeavyWeaponToolStatTypeOrder.get();
+        if (statsOrder.isEmpty()) {
+            statsOrder = DEFAULT_DUAL_HEAVY_WEAPON_TOOL_STATS_ORDER;
+        }
+        return (List<String>) statsOrder;
+    }
+
+    public static List<String> getDualHeavyWeaponToolStatsRandomPool() {
+        List<? extends String> statsRandomPool = dualHeavyWeaponToolStatTypeRandomPool.get();
+        if (statsRandomPool.isEmpty()) {
+            statsRandomPool = DEFAULT_DUAL_HEAVY_WEAPON_TOOL_STATS_RANDOM_POOL;
+        }
+        return (List<String>) statsRandomPool;
+    }
+
+    public static List<String> getHeavyWeaponSlotsOrder() {
+        List<? extends String> slotsOrder = heavyWeaponSlotTypeOrder.get();
+        if (slotsOrder.isEmpty()) {
+            slotsOrder = DEFAULT_HEAVY_WEAPON_SLOTS_ORDER;
+        }
+        return (List<String>) slotsOrder;
+    }
+
+    public static List<String> getHeavyWeaponSlotsRandomPool() {
+        List<? extends String> slotsRandomPool = heavyWeaponSlotTypeRandomPool.get();
+        if (slotsRandomPool.isEmpty()) {
+            slotsRandomPool = DEFAULT_HEAVY_WEAPON_SLOTS_RANDOM_POOL;
+        }
+        return (List<String>) slotsRandomPool;
+    }
+
+    public static List<String> getHeavyWeaponStatsOrder() {
+        List<? extends String> statsOrder = heavyWeaponStatTypeOrder.get();
+        if (statsOrder.isEmpty()) {
+            statsOrder = DEFAULT_HEAVY_WEAPON_STATS_ORDER;
+        }
+        return (List<String>) statsOrder;
+    }
+
+    public static List<String> getHeavyWeaponStatsRandomPool() {
+        List<? extends String> statsRandomPool = heavyWeaponStatTypeRandomPool.get();
+        if (statsRandomPool.isEmpty()) {
+            statsRandomPool = DEFAULT_HEAVY_WEAPON_STATS_RANDOM_POOL;
+        }
+        return (List<String>) statsRandomPool;
+    }
+
+    public static List<String> getLightWeaponSlotsOrder() {
+        List<? extends String> slotsOrder = lightWeaponSlotTypeOrder.get();
+        if (slotsOrder.isEmpty()) {
+            slotsOrder = DEFAULT_LIGHT_WEAPON_SLOTS_ORDER;
+        }
+        return (List<String>) slotsOrder;
+    }
+
+    public static List<String> getLightWeaponSlotsRandomPool() {
+        List<? extends String> slotsRandomPool = lightWeaponSlotTypeRandomPool.get();
+        if (slotsRandomPool.isEmpty()) {
+            slotsRandomPool = DEFAULT_LIGHT_WEAPON_SLOTS_RANDOM_POOL;
+        }
+        return (List<String>) slotsRandomPool;
+    }
+
+    public static List<String> getLightWeaponStatsOrder() {
+        List<? extends String> statsOrder = lightWeaponStatTypeOrder.get();
+        if (statsOrder.isEmpty()) {
+            statsOrder = DEFAULT_LIGHT_WEAPON_STATS_ORDER;
+        }
+        return (List<String>) statsOrder;
+    }
+
+    public static List<String> getLightWeaponStatsRandomPool() {
+        List<? extends String> statsRandomPool = lightWeaponStatTypeRandomPool.get();
+        if (statsRandomPool.isEmpty()) {
+            statsRandomPool = DEFAULT_LIGHT_WEAPON_STATS_RANDOM_POOL;
+        }
+        return (List<String>) statsRandomPool;
+    }
+
     public static List<String> getRangedSlotsOrder() {
         List<? extends String> slotsOrder = rangedSlotTypeOrder.get();
         if (slotsOrder.isEmpty()) {
@@ -929,6 +1549,38 @@ public class Config {
         List<? extends String> statsRandomPool = shieldStatTypeRandomPool.get();
         if (statsRandomPool.isEmpty()) {
             statsRandomPool = DEFAULT_SHIELD_STATS_RANDOM_POOL;
+        }
+        return (List<String>) statsRandomPool;
+    }
+
+    public static List<String> getSpellbookSlotsOrder() {
+        List<? extends String> slotsOrder = spellbookSlotTypeOrder.get();
+        if (slotsOrder.isEmpty()) {
+            slotsOrder = DEFAULT_SPELLBOOK_SLOTS_ORDER;
+        }
+        return (List<String>) slotsOrder;
+    }
+
+    public static List<String> getSpellbookSlotsRandomPool() {
+        List<? extends String> slotsRandomPool = spellbookSlotTypeRandomPool.get();
+        if (slotsRandomPool.isEmpty()) {
+            slotsRandomPool = DEFAULT_SPELLBOOK_SLOTS_RANDOM_POOL;
+        }
+        return (List<String>) slotsRandomPool;
+    }
+
+    public static List<String> getSpellbookStatsOrder() {
+        List<? extends String> statsOrder = spellbookStatTypeOrder.get();
+        if (statsOrder.isEmpty()) {
+            statsOrder = DEFAULT_SPELLBOOK_STATS_ORDER;
+        }
+        return (List<String>) statsOrder;
+    }
+
+    public static List<String> getSpellbookStatsRandomPool() {
+        List<? extends String> statsRandomPool = spellbookStatTypeRandomPool.get();
+        if (statsRandomPool.isEmpty()) {
+            statsRandomPool = DEFAULT_SPELLBOOK_STATS_RANDOM_POOL;
         }
         return (List<String>) statsRandomPool;
     }
@@ -997,6 +1649,38 @@ public class Config {
         return (List<String>) statsRandomPool;
     }
 
+    public static List<String> getWandSlotsOrder() {
+        List<? extends String> slotsOrder = wandSlotTypeOrder.get();
+        if (slotsOrder.isEmpty()) {
+            slotsOrder = DEFAULT_WAND_SLOTS_ORDER;
+        }
+        return (List<String>) slotsOrder;
+    }
+
+    public static List<String> getWandSlotsRandomPool() {
+        List<? extends String> slotsRandomPool = wandSlotTypeRandomPool.get();
+        if (slotsRandomPool.isEmpty()) {
+            slotsRandomPool = DEFAULT_WAND_SLOTS_RANDOM_POOL;
+        }
+        return (List<String>) slotsRandomPool;
+    }
+
+    public static List<String> getWandStatsOrder() {
+        List<? extends String> statsOrder = wandStatTypeOrder.get();
+        if (statsOrder.isEmpty()) {
+            statsOrder = DEFAULT_WAND_STATS_ORDER;
+        }
+        return (List<String>) statsOrder;
+    }
+
+    public static List<String> getWandStatsRandomPool() {
+        List<? extends String> statsRandomPool = wandStatTypeRandomPool.get();
+        if (statsRandomPool.isEmpty()) {
+            statsRandomPool = DEFAULT_WAND_STATS_RANDOM_POOL;
+        }
+        return (List<String>) statsRandomPool;
+    }
+
     public static double getArmorStatValue(FloatToolStat stat) {
         if (stat.equals(ToolStats.DURABILITY)) {
             return armorDurabilityValue.get();
@@ -1009,6 +1693,74 @@ public class Config {
         }
         if (stat.equals(ToolStats.KNOCKBACK_RESISTANCE)) {
             return armorKnockbackResistanceValue.get();
+        }
+        return 0;
+    }
+
+    public static double getBattlestaffStatValue(FloatToolStat stat) {
+        if (stat.equals(ToolStats.ATTACK_DAMAGE)) {
+            return battlestaffAttackDamageValue.get();
+        }
+        if (stat.equals(ToolStats.ATTACK_SPEED)) {
+            return battlestaffAttackSpeedValue.get();
+        }
+        if (stat.equals(ToolStats.DURABILITY)) {
+            return battlestaffDurabilityValue.get();
+        }
+        if (stat.equals(ToolStats.SPELL_POWER)) {
+            return battlestaffSpellPowerValue.get();
+        }
+        if (stat.equals(ToolStats.MAX_MANA)) {
+            return battlestaffManaValue.get();
+        }
+        return 0;
+    }
+
+    public static double getBreakingToolStatValue(FloatToolStat stat) {
+        if (stat.equals(ToolStats.MINING_SPEED)) {
+            return breakingToolMiningSpeedValue.get();
+        }
+        if (stat.equals(ToolStats.DURABILITY)) {
+            return breakingToolDurabilityValue.get();
+        }
+        return 0;
+    }
+
+    public static double getDualHeavyWeaponToolStatValue(FloatToolStat stat) {
+        if (stat.equals(ToolStats.ATTACK_DAMAGE)) {
+            return dualHeavyWeaponToolAttackDamageValue.get();
+        }
+        if (stat.equals(ToolStats.MINING_SPEED)) {
+            return dualHeavyWeaponToolMiningSpeedValue.get();
+        }
+        if (stat.equals(ToolStats.DURABILITY)) {
+            return dualHeavyWeaponToolDurabilityValue.get();
+        }
+        return 0;
+    }
+
+    public static double getHeavyWeaponStatValue(FloatToolStat stat) {
+        if (stat.equals(ToolStats.ATTACK_DAMAGE)) {
+            return heavyWeaponAttackDamageValue.get();
+        }
+        if (stat.equals(ToolStats.ATTACK_SPEED)) {
+            return heavyWeaponAttackSpeedValue.get();
+        }
+        if (stat.equals(ToolStats.DURABILITY)) {
+            return heavyWeaponDurabilityValue.get();
+        }
+        return 0;
+    }
+
+    public static double getLightWeaponStatValue(FloatToolStat stat) {
+        if (stat.equals(ToolStats.ATTACK_DAMAGE)) {
+            return lightWeaponAttackDamageValue.get();
+        }
+        if (stat.equals(ToolStats.ATTACK_SPEED)) {
+            return lightWeaponAttackSpeedValue.get();
+        }
+        if (stat.equals(ToolStats.DURABILITY)) {
+            return lightWeaponDurabilityValue.get();
         }
         return 0;
     }
@@ -1029,10 +1781,10 @@ public class Config {
         if (stat.equals(ToolStats.DURABILITY)) {
             return rangedDurabilityValue.get();
         }
-        if (stat.equals(ToolStats.ATTACK_DAMAGE)) {
+        if (stat.equals(ToolStats.ATTACK_DAMAGE)) { //RM!!!
             return rangedAttackDamageValue.get();
         }
-        if (stat.equals(ToolStats.ATTACK_SPEED)) {
+        if (stat.equals(ToolStats.ATTACK_SPEED)) { //RM!!!
             return rangedAttackSpeedValue.get();
         }
         return 0;
@@ -1053,6 +1805,22 @@ public class Config {
         }
         if (stat.equals(ToolStats.KNOCKBACK_RESISTANCE)) {
             return shieldKnockbackResistanceValue.get();
+        }
+        return 0;
+    }
+
+    public static double getSpellbookStatValue(FloatToolStat stat) {
+        if (stat.equals(ToolStats.SPELL_POWER)) {
+            return spellbookSpellPowerValue.get();
+        }
+        if (stat.equals(ToolStats.MAX_MANA)) {
+            return spellbookManaValue.get();
+        }
+        if (stat.equals(ToolStats.SPELL_SLOTS)) {
+            return spellbookSpellSlotsValue.get();
+        }
+        if (stat.equals(ToolStats.COOLDOWN_REDUCTION)) {
+            return spellbookCooldownReductionValue.get();
         }
         return 0;
     }
@@ -1091,6 +1859,22 @@ public class Config {
         }
         if (stat.equals(ToolStats.MINING_SPEED)) {
             return toolMiningSpeedValue.get();
+        }
+        return 0;
+    }
+
+    public static double getWandStatValue(FloatToolStat stat) {
+        if (stat.equals(ToolStats.SPELL_POWER)) {
+            return wandSpellPowerValue.get();
+        }
+        if (stat.equals(ToolStats.MAX_MANA)) {
+            return wandManaValue.get();
+        }
+        if (stat.equals(ToolStats.CASTING_SPEED)) {
+            return wandCastingSpeedValue.get();
+        }
+        if (stat.equals(ToolStats.COOLDOWN_REDUCTION)) {
+            return wandCooldownReductionValue.get();
         }
         return 0;
     }
