@@ -7,12 +7,15 @@ import net.minecraft.world.item.ItemStack;
 import pyre.tinkerslevellingaddon.config.Config;
 import pyre.tinkerslevellingaddon.network.LevelUpPacket;
 import pyre.tinkerslevellingaddon.network.Messages;
-import slimeknights.tconstruct.common.TinkerTags;
+import pyre.tinkerslevellingaddon.setup.TinkersLevellingAddonTags;
+import pyre.tinkerslevellingaddon.setup.TinkersLevellingAddonStats;
 import slimeknights.tconstruct.library.tools.SlotType;
 import slimeknights.tconstruct.library.tools.nbt.*;
 import slimeknights.tconstruct.library.tools.stat.FloatToolStat;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import slimeknights.tconstruct.tools.data.ModifierIds;
+import com.snackpirate.constructscasting.materials.CCToolStats;
+import com.snackpirate.constructscasting.setup.CCModifiers;
 
 import java.util.*;
 
@@ -45,11 +48,11 @@ public class ToolLevellingUtil {
     public static final String BLOCK_AMOUNT = "blockAmount";
     public static final String BLOCK_ANGLE = "blockAngle";
     //Iron's compat
-    public static final String MAX_MANA = "irons_spellbooks:max_mana";
-    public static final String SPELL_POWER = "irons_spellbooks:spell_power";
-    public static final String SPELL_SLOTS = "constructs_casting:spell_slots";
-    public static final String CASTING_SPEED = "irons_spellbooks:cast_time_reduction";
-    public static final String COOLDOWN_REDUCTION = "irons_spellbooks:cooldown_reduction";
+    public static final String MAX_MANA = "maxMana";
+    public static final String SPELL_POWER = "spellPower";
+    public static final String SPELL_SLOTS = "spellSlots";
+    public static final String CASTING_SPEED = "castingSpeed";
+    public static final String COOLDOWN_REDUCTION = "cooldownReduction";
 
     private static final Map<String, SlotType> ARMOR_SLOT_TYPES;
     private static final Map<String, SlotType> IRONS_SLOT_TYPES;
@@ -86,7 +89,7 @@ public class ToolLevellingUtil {
         IRONS_SLOT_TYPES.put(UPGRADE, SlotType.UPGRADE);
         IRONS_SLOT_TYPES.put(ABILITY, SlotType.ABILITY);
         IRONS_SLOT_TYPES.put(SOUL, SlotType.SOUL);
-        IRONS_SLOT_TYPES.put(BOON, SlotType.BOON);
+        IRONS_SLOT_TYPES.put(BOON, CCModifiers.AFFINITY_SLOT);
 
         TOOL_SLOT_TYPES = new LinkedHashMap<>();
         TOOL_SLOT_TYPES.put(NONE, null);
@@ -97,6 +100,7 @@ public class ToolLevellingUtil {
         
         ALL_SLOT_TYPES = new HashMap<>(TOOL_SLOT_TYPES);
         ALL_SLOT_TYPES.putAll(ARMOR_SLOT_TYPES);
+        ALL_SLOT_TYPES.putAll(IRONS_SLOT_TYPES);
 
         //stats
         ARMOR_STAT_TYPES = new LinkedHashMap<>();
@@ -111,8 +115,8 @@ public class ToolLevellingUtil {
         BATTLESTAFF_STAT_TYPES.put(ATTACK_DAMAGE, ToolStats.ATTACK_DAMAGE);
         BATTLESTAFF_STAT_TYPES.put(ATTACK_SPEED, ToolStats.ATTACK_SPEED);
         BATTLESTAFF_STAT_TYPES.put(DURABILITY, ToolStats.DURABILITY);
-        BATTLESTAFF_STAT_TYPES.put(SPELL_POWER, ToolStats.SPELL_POWER);
-        BATTLESTAFF_STAT_TYPES.put(MAX_MANA, ToolStats.MAX_MANA);
+        BATTLESTAFF_STAT_TYPES.put(MAX_MANA, CCToolStats.MAX_MANA);
+        BATTLESTAFF_STAT_TYPES.put(SPELL_POWER, CCToolStats.SPELL_POWER);
 
         BREAKING_TOOL_STAT_TYPES = new LinkedHashMap<>();
         BREAKING_TOOL_STAT_TYPES.put(NONE, null);
@@ -144,8 +148,6 @@ public class ToolLevellingUtil {
         RANGED_STAT_TYPES.put(ACCURACY, ToolStats.ACCURACY);
         RANGED_STAT_TYPES.put(PROJECTILE_DAMAGE, ToolStats.PROJECTILE_DAMAGE);
         RANGED_STAT_TYPES.put(DURABILITY, ToolStats.DURABILITY);
-        RANGED_STAT_TYPES.put(ATTACK_DAMAGE, ToolStats.ATTACK_DAMAGE);
-        RANGED_STAT_TYPES.put(ATTACK_SPEED, ToolStats.ATTACK_SPEED);
 
         SHIELD_STAT_TYPES = new LinkedHashMap<>();
         SHIELD_STAT_TYPES.put(NONE, null);
@@ -157,10 +159,10 @@ public class ToolLevellingUtil {
 
         SPELLBOOK_STAT_TYPES = new LinkedHashMap<>();
         SPELLBOOK_STAT_TYPES.put(NONE, null);
-        SPELLBOOK_STAT_TYPES.put(SPELL_POWER, ToolStats.SPELL_POWER);
-        SPELLBOOK_STAT_TYPES.put(MAX_MANA, ToolStats.MAX_MANA);
-        SPELLBOOK_STAT_TYPES.put(SPELL_SLOTS, ToolStats.SPELL_SLOTS);
-        SPELLBOOK_STAT_TYPES.put(COOLDOWN_REDUCTION, ToolStats.COOLDOWN_REDUCTION);
+        SPELLBOOK_STAT_TYPES.put(MAX_MANA, CCToolStats.MAX_MANA);
+        SPELLBOOK_STAT_TYPES.put(SPELL_POWER, CCToolStats.SPELL_POWER);
+        SPELLBOOK_STAT_TYPES.put(COOLDOWN_REDUCTION, CCToolStats.COOLDOWN_REDUCTION);
+        SPELLBOOK_STAT_TYPES.put(SPELL_SLOTS, CCToolStats.SPELL_SLOTS);
         
         STAFF_STAT_TYPES = new LinkedHashMap<>();
         STAFF_STAT_TYPES.put(NONE, null);
@@ -180,10 +182,10 @@ public class ToolLevellingUtil {
 
         WAND_STAT_TYPES = new LinkedHashMap<>();
         WAND_STAT_TYPES.put(NONE, null);
-        WAND_STAT_TYPES.put(SPELL_POWER, ToolStats.SPELL_POWER);
-        WAND_STAT_TYPES.put(MAX_MANA, ToolStats.MAX_MANA);
-        WAND_STAT_TYPES.put(CASTING_SPEED, ToolStats.CASTING_SPEED);
-        WAND_STAT_TYPES.put(COOLDOWN_REDUCTION, ToolStats.COOLDOWN_REDUCTION);
+        WAND_STAT_TYPES.put(MAX_MANA, CCToolStats.MAX_MANA);
+        WAND_STAT_TYPES.put(SPELL_POWER, CCToolStats.SPELL_POWER);
+        WAND_STAT_TYPES.put(COOLDOWN_REDUCTION, CCToolStats.COOLDOWN_REDUCTION);
+        WAND_STAT_TYPES.put(CASTING_SPEED, TinkersLevellingAddonStats.CASTING_SPEED);
 
         ALL_STAT_TYPES = new HashMap<>(TOOL_STAT_TYPES);
         ALL_STAT_TYPES.putAll(ARMOR_STAT_TYPES);
@@ -795,49 +797,49 @@ public class ToolLevellingUtil {
     }
 
     public static boolean isArmor(IToolContext tool) {
-        return tool.hasTag(TinkerTags.Items.ARMOR);
+        return tool.hasTag(TinkersLevellingAddonTags.ARMOR);
     }
 
     public static boolean isBattlestaff(IToolContext tool) {
-        return tool.hasTag(TinkerTags.Items.ARMOR); //tag has to be implemented
+        return tool.hasTag(TinkersLevellingAddonTags.BATTLESTAFF);
     }
 
     public static boolean isBreakingTool(IToolContext tool) {
-        return tool.hasTag(TinkerTags.Items.ARMOR); //tag has to be implemented
+        return tool.hasTag(TinkersLevellingAddonTags.BREAKING_TOOL);
     }
 
     public static boolean isDualHeavyWeaponTool(IToolContext tool) {
-        return tool.hasTag(TinkerTags.Items.ARMOR); //tag has to be implemented
+        return tool.hasTag(TinkersLevellingAddonTags.DUAL_HEAVY_WEAPON_TOOL);
     }
 
     public static boolean isHeavyWeapon(IToolContext tool) {
-        return tool.hasTag(TinkerTags.Items.ARMOR); //tag has to be implemented
+        return tool.hasTag(TinkersLevellingAddonTags.HEAVY_WEAPON);
     }
 
     public static boolean isLightWeapon(IToolContext tool) {
-        return tool.hasTag(TinkerTags.Items.ARMOR); //tag has to be implemented
+        return tool.hasTag(TinkersLevellingAddonTags.LIGHT_WEAPON);
     }
 
     public static boolean isRanged(IToolContext tool) {
-        return tool.hasTag(TinkerTags.Items.RANGED);
+        return tool.hasTag(TinkersLevellingAddonTags.RANGED);
     }
 
     public static boolean isShield(IToolContext tool) {
-        return tool.hasTag(TinkerTags.Items.SHIELDS);
+        return tool.hasTag(TinkersLevellingAddonTags.SHIELD);
     }
 
     public static boolean isSpellbook(IToolContext tool) {
-        return tool.hasTag(TinkerTags.Items.ARMOR); //tag has to be implemented
+        return tool.hasTag(TinkersLevellingAddonTags.SPELLBOOK);
     }
-    
+
     public static boolean isStaff(IToolContext tool) {
-        return tool.hasTag(TinkerTags.Items.STAFFS);
+        return tool.hasTag(TinkersLevellingAddonTags.STAFF);
     }
 
     public static boolean isWand(IToolContext tool) {
-        return tool.hasTag(TinkerTags.Items.ARMOR); //tag has to be implemented
+        return tool.hasTag(TinkersLevellingAddonTags.WAND);
     }
-    
+
     public static boolean isBroadTool(IToolStackView tool) {
         return tool.getMaterials().size() > 3 || isStaff(tool);
     }

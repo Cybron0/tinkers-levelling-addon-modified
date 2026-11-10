@@ -8,6 +8,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import pyre.tinkerslevellingaddon.setup.Sounds;
 import slimeknights.tconstruct.library.tools.stat.FloatToolStat;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
+import com.snackpirate.constructscasting.materials.CCToolStats;
 
 import java.util.List;
 
@@ -195,8 +196,6 @@ public class Config {
 
     //general.stats.rangedValues
     public static ForgeConfigSpec.DoubleValue rangedAccuracyValue;
-    public static ForgeConfigSpec.DoubleValue rangedAttackDamageValue; //RM!!!
-    public static ForgeConfigSpec.DoubleValue rangedAttackSpeedValue;  //RM!!!
     public static ForgeConfigSpec.DoubleValue rangedDrawSpeedValue;
     public static ForgeConfigSpec.IntValue rangedDurabilityValue;
     public static ForgeConfigSpec.DoubleValue rangedProjectileDamageValue;
@@ -455,7 +454,7 @@ public class Config {
         armorSlotTypeRandomPool = builder.comment("Set of modifier slot types from which random slot will be awarded when leveling up armor.",
                         "If empty default pool will be used (" + String.join(", ", DEFAULT_ARMOR_SLOTS_RANDOM_POOL) + ").",
                         "Allowed values: " + String.join(", ", getArmorSlotTypes()))
-                .translation("config.tinkerslevellingaddon.general.modifiers.armor_slot_type_random_pool")
+                .translation("config.tinkerslevellingaddon.general.slots.armor_slot_type_random_pool")
                 .defineList("armorSlotTypeRandomPool", DEFAULT_ARMOR_SLOTS_RANDOM_POOL, t -> getArmorSlotTypes().contains(t));
 
         battlestaffSlotTypeOrder = builder.comment("List of modifier slot types (in order) that will be awarded when leveling up battlestaffs. If level is higher than list size the mod will start over.",
@@ -467,55 +466,55 @@ public class Config {
         battlestaffSlotTypeRandomPool = builder.comment("Set of modifier slot types from which random slot will be awarded when leveling up battlestaffs.",
                         "If empty default pool will be used (" + String.join(", ", DEFAULT_BATTLESTAFF_SLOTS_RANDOM_POOL) + ").",
                         "Allowed values: " + String.join(", ", getBattlestaffSlotTypes()))
-                .translation("config.tinkerslevellingaddon.general.modifiers.battlestaff_slot_type_random_pool")
+                .translation("config.tinkerslevellingaddon.general.slots.battlestaff_slot_type_random_pool")
                 .defineList("battlestaffSlotTypeRandomPool", DEFAULT_BATTLESTAFF_SLOTS_RANDOM_POOL, t -> getBattlestaffSlotTypes().contains(t));
 
         breakingToolSlotTypeOrder = builder.comment("List of modifier slot types (in order) that will be awarded when leveling up mining tools. If level is higher than list size the mod will start over.",
                         "If empty default order will be used (" + String.join(", ", DEFAULT_BREAKING_TOOL_SLOTS_ORDER) + ").",
                         "Allowed values: " + String.join(", ", getBreakingToolSlotTypes()))
-                .translation("config.tinkerslevellingaddon.general.slots.breakingTool_slot_type_order")
+                .translation("config.tinkerslevellingaddon.general.slots.breaking_tool_slot_type_order")
                 .defineList("breakingToolSlotTypeOrder", DEFAULT_BREAKING_TOOL_SLOTS_ORDER, t -> getBreakingToolSlotTypes().contains(t));
 
         breakingToolSlotTypeRandomPool = builder.comment("Set of modifier slot types from which random slot will be awarded when leveling up mining tools.",
                         "If empty default pool will be used (" + String.join(", ", DEFAULT_BREAKING_TOOL_SLOTS_RANDOM_POOL) + ").",
                         "Allowed values: " + String.join(", ", getBreakingToolSlotTypes()))
-                .translation("config.tinkerslevellingaddon.general.modifiers.breakingTool_slot_type_random_pool")
+                .translation("config.tinkerslevellingaddon.general.slots.breaking_tool_slot_type_random_pool")
                 .defineList("breakingToolSlotTypeRandomPool", DEFAULT_BREAKING_TOOL_SLOTS_RANDOM_POOL, t -> getBreakingToolSlotTypes().contains(t));
 
         dualHeavyWeaponToolSlotTypeOrder = builder.comment("List of modifier slot types (in order) that will be awarded when leveling up tools useable as heavy weapons and for breaking blocks. If level is higher than list size the mod will start over.",
                         "If empty default order will be used (" + String.join(", ", DEFAULT_DUAL_HEAVY_WEAPON_TOOL_SLOTS_ORDER) + ").",
                         "Allowed values: " + String.join(", ", getDualHeavyWeaponToolSlotTypes()))
-                .translation("config.tinkerslevellingaddon.general.slots.dualHeavyWeaponTool_slot_type_order")
+                .translation("config.tinkerslevellingaddon.general.slots.dual_heavy_weapon_tool_slot_type_order")
                 .defineList("dualHeavyWeaponToolSlotTypeOrder", DEFAULT_DUAL_HEAVY_WEAPON_TOOL_SLOTS_ORDER, t -> getDualHeavyWeaponToolSlotTypes().contains(t));
 
         dualHeavyWeaponToolSlotTypeRandomPool = builder.comment("Set of modifier slot types from which random slot will be awarded when leveling up tools useable as heavy weapons and for breaking blocks.",
                         "If empty default pool will be used (" + String.join(", ", DEFAULT_DUAL_HEAVY_WEAPON_TOOL_SLOTS_RANDOM_POOL) + ").",
                         "Allowed values: " + String.join(", ", getDualHeavyWeaponToolSlotTypes()))
-                .translation("config.tinkerslevellingaddon.general.modifiers.dualHeavyWeaponTool_slot_type_random_pool")
+                .translation("config.tinkerslevellingaddon.general.slots.dual_heavy_weapon_tool_slot_type_random_pool")
                 .defineList("dualHeavyWeaponToolSlotTypeRandomPool", DEFAULT_DUAL_HEAVY_WEAPON_TOOL_SLOTS_RANDOM_POOL, t -> getDualHeavyWeaponToolSlotTypes().contains(t));
 
         heavyWeaponSlotTypeOrder = builder.comment("List of modifier slot types (in order) that will be awarded when leveling up heavy weapons. If level is higher than list size the mod will start over.",
                         "If empty default order will be used (" + String.join(", ", DEFAULT_HEAVY_WEAPON_SLOTS_ORDER) + ").",
                         "Allowed values: " + String.join(", ", getHeavyWeaponSlotTypes()))
-                .translation("config.tinkerslevellingaddon.general.slots.heavyWeapon_slot_type_order")
+                .translation("config.tinkerslevellingaddon.general.slots.heavy_weapon_slot_type_order")
                 .defineList("heavyWeaponSlotTypeOrder", DEFAULT_HEAVY_WEAPON_SLOTS_ORDER, t -> getHeavyWeaponSlotTypes().contains(t));
 
         heavyWeaponSlotTypeRandomPool = builder.comment("Set of modifier slot types from which random slot will be awarded when leveling up heavy weapons.",
                         "If empty default pool will be used (" + String.join(", ", DEFAULT_HEAVY_WEAPON_SLOTS_RANDOM_POOL) + ").",
                         "Allowed values: " + String.join(", ", getHeavyWeaponSlotTypes()))
-                .translation("config.tinkerslevellingaddon.general.modifiers.heavyWeapon_slot_type_random_pool")
+                .translation("config.tinkerslevellingaddon.general.slots.heavy_weapon_slot_type_random_pool")
                 .defineList("heavyWeaponSlotTypeRandomPool", DEFAULT_HEAVY_WEAPON_SLOTS_RANDOM_POOL, t -> getHeavyWeaponSlotTypes().contains(t));
 
         lightWeaponSlotTypeOrder = builder.comment("List of modifier slot types (in order) that will be awarded when leveling up light weapons. If level is higher than list size the mod will start over.",
                         "If empty default order will be used (" + String.join(", ", DEFAULT_LIGHT_WEAPON_SLOTS_ORDER) + ").",
                         "Allowed values: " + String.join(", ", getLightWeaponSlotTypes()))
-                .translation("config.tinkerslevellingaddon.general.slots.lightWeapon_slot_type_order")
+                .translation("config.tinkerslevellingaddon.general.slots.light_weapon_slot_type_order")
                 .defineList("lightWeaponSlotTypeOrder", DEFAULT_LIGHT_WEAPON_SLOTS_ORDER, t -> getLightWeaponSlotTypes().contains(t));
 
         lightWeaponSlotTypeRandomPool = builder.comment("Set of modifier slot types from which random slot will be awarded when leveling up light weapons.",
                         "If empty default pool will be used (" + String.join(", ", DEFAULT_LIGHT_WEAPON_SLOTS_RANDOM_POOL) + ").",
                         "Allowed values: " + String.join(", ", getLightWeaponSlotTypes()))
-                .translation("config.tinkerslevellingaddon.general.modifiers.lightWeapon_slot_type_random_pool")
+                .translation("config.tinkerslevellingaddon.general.slots.light_weapon_slot_type_random_pool")
                 .defineList("lightWeaponSlotTypeRandomPool", DEFAULT_LIGHT_WEAPON_SLOTS_RANDOM_POOL, t -> getLightWeaponSlotTypes().contains(t));
 
         rangedSlotTypeOrder = builder.comment("List of modifier slot types (in order) that will be awarded when leveling up ranged weapons. If level is higher than list size the mod will start over.",
@@ -539,7 +538,7 @@ public class Config {
         shieldSlotTypeRandomPool = builder.comment("Set of modifier slot types from which random slot will be awarded when leveling up shields.",
                         "If empty default pool will be used (" + String.join(", ", DEFAULT_SHIELD_SLOTS_RANDOM_POOL) + ").",
                         "Allowed values: " + String.join(", ", getShieldSlotTypes()))
-                .translation("config.tinkerslevellingaddon.general.modifiers.shield_slot_type_random_pool")
+                .translation("config.tinkerslevellingaddon.general.slots.shield_slot_type_random_pool")
                 .defineList("shieldSlotTypeRandomPool", DEFAULT_SHIELD_SLOTS_RANDOM_POOL, t -> getShieldSlotTypes().contains(t));
 
         spellbookSlotTypeOrder = builder.comment("List of modifier slot types (in order) that will be awarded when leveling up spellbooks. If level is higher than list size the mod will start over.",
@@ -551,7 +550,7 @@ public class Config {
         spellbookSlotTypeRandomPool = builder.comment("Set of modifier slot types from which random slot will be awarded when leveling up spellbooks.",
                         "If empty default pool will be used (" + String.join(", ", DEFAULT_SPELLBOOK_SLOTS_RANDOM_POOL) + ").",
                         "Allowed values: " + String.join(", ", getSpellbookSlotTypes()))
-                .translation("config.tinkerslevellingaddon.general.modifiers.spellbook_slot_type_random_pool")
+                .translation("config.tinkerslevellingaddon.general.slots.spellbook_slot_type_random_pool")
                 .defineList("spellbookSlotTypeRandomPool", DEFAULT_SPELLBOOK_SLOTS_RANDOM_POOL, t -> getSpellbookSlotTypes().contains(t));
 
         staffSlotTypeOrder = builder.comment("List of modifier slot types (in order) that will be awarded when leveling up staffs. If level is higher than list size the mod will start over.",
@@ -563,7 +562,7 @@ public class Config {
         staffSlotTypeRandomPool = builder.comment("Set of modifier slot types from which random slot will be awarded when leveling up staffs.",
                         "If empty default pool will be used (" + String.join(", ", DEFAULT_STAFF_SLOTS_RANDOM_POOL) + ").",
                         "Allowed values: " + String.join(", ", getArmorSlotTypes()))
-                .translation("config.tinkerslevellingaddon.general.modifiers.staff_slot_type_random_pool")
+                .translation("config.tinkerslevellingaddon.general.slots.staff_slot_type_random_pool")
                 .defineList("staffSlotTypeRandomPool", DEFAULT_STAFF_SLOTS_RANDOM_POOL, t -> getStaffSlotTypes().contains(t));
 
         toolsSlotTypeOrder = builder.comment("List of modifier slot types (in order) that will be awarded when leveling up tools. If level is higher than list size the mod will start over.",
@@ -587,7 +586,7 @@ public class Config {
         wandSlotTypeRandomPool = builder.comment("Set of modifier slot types from which random slot will be awarded when leveling up wands.",
                         "If empty default pool will be used (" + String.join(", ", DEFAULT_WAND_SLOTS_RANDOM_POOL) + ").",
                         "Allowed values: " + String.join(", ", getWandSlotTypes()))
-                .translation("config.tinkerslevellingaddon.general.modifiers.wand_slot_type_random_pool")
+                .translation("config.tinkerslevellingaddon.general.slots.wand_slot_type_random_pool")
                 .defineList("wandSlotTypeRandomPool", DEFAULT_WAND_SLOTS_RANDOM_POOL, t -> getWandSlotTypes().contains(t));
 
         builder.pop();
@@ -627,13 +626,13 @@ public class Config {
         breakingToolStatTypeOrder = builder.comment("List of stat types (in order) that will be awarded when leveling up mining tools. If level is higher than list size the mod will start over.",
                         "If empty default order will be used (" + String.join(", ", DEFAULT_BREAKING_TOOL_STATS_ORDER) + ").",
                         "Allowed values: " + String.join(", ", getBreakingToolStatTypes()))
-                .translation("config.tinkerslevellingaddon.general.stats.breakingTool_stat_type_order")
+                .translation("config.tinkerslevellingaddon.general.stats.breaking_tool_stat_type_order")
                 .defineList("breakingToolStatTypeOrder", DEFAULT_BREAKING_TOOL_STATS_ORDER, t -> getBreakingToolStatTypes().contains(t));
 
         breakingToolStatTypeRandomPool = builder.comment("Set of stat types from which random stat will be awarded when leveling up mining tools.",
                         "If empty default pool will be used (" + String.join(", ", DEFAULT_BREAKING_TOOL_STATS_RANDOM_POOL) + ").",
                         "Allowed values: " + String.join(", ", getBreakingToolStatTypes()))
-                .translation("config.tinkerslevellingaddon.general.stats.breakingTool_stat_type_random_pool")
+                .translation("config.tinkerslevellingaddon.general.stats.breaking_tool_stat_type_random_pool")
                 .defineList("breakingToolStatTypeRandomPool", DEFAULT_BREAKING_TOOL_STATS_RANDOM_POOL, t -> getBreakingToolStatTypes().contains(t));
 
         breakingToolStatsValuesConfig(builder);
@@ -641,13 +640,13 @@ public class Config {
         dualHeavyWeaponToolStatTypeOrder = builder.comment("List of stat types (in order) that will be awarded when leveling up tools useable as heavy weapons and for breaking blocks. If level is higher than list size the mod will start over.",
                         "If empty default order will be used (" + String.join(", ", DEFAULT_DUAL_HEAVY_WEAPON_TOOL_STATS_ORDER) + ").",
                         "Allowed values: " + String.join(", ", getDualHeavyWeaponToolStatTypes()))
-                .translation("config.tinkerslevellingaddon.general.stats.dualHeavyWeaponTool_stat_type_order")
+                .translation("config.tinkerslevellingaddon.general.stats.dual_heavy_weapon_tool_stat_type_order")
                 .defineList("dualHeavyWeaponToolStatTypeOrder", DEFAULT_DUAL_HEAVY_WEAPON_TOOL_STATS_ORDER, t -> getDualHeavyWeaponToolStatTypes().contains(t));
 
         dualHeavyWeaponToolStatTypeRandomPool = builder.comment("Set of stat types from which random stat will be awarded when leveling up tools useable as heavy weapons and for breaking blocks.",
                         "If empty default pool will be used (" + String.join(", ", DEFAULT_DUAL_HEAVY_WEAPON_TOOL_STATS_RANDOM_POOL) + ").",
                         "Allowed values: " + String.join(", ", getDualHeavyWeaponToolStatTypes()))
-                .translation("config.tinkerslevellingaddon.general.stats.dualHeavyWeaponTool_stat_type_random_pool")
+                .translation("config.tinkerslevellingaddon.general.stats.dual_heavy_weapon_tool_stat_type_random_pool")
                 .defineList("dualHeavyWeaponToolStatTypeRandomPool", DEFAULT_DUAL_HEAVY_WEAPON_TOOL_STATS_RANDOM_POOL, t -> getDualHeavyWeaponToolStatTypes().contains(t));
 
         dualHeavyWeaponToolStatsValuesConfig(builder);
@@ -655,13 +654,13 @@ public class Config {
         heavyWeaponStatTypeOrder = builder.comment("List of stat types (in order) that will be awarded when leveling up heavy weapons. If level is higher than list size the mod will start over.",
                         "If empty default order will be used (" + String.join(", ", DEFAULT_HEAVY_WEAPON_STATS_ORDER) + ").",
                         "Allowed values: " + String.join(", ", getHeavyWeaponStatTypes()))
-                .translation("config.tinkerslevellingaddon.general.stats.heavyWeapon_stat_type_order")
+                .translation("config.tinkerslevellingaddon.general.stats.heavy_weapon_stat_type_order")
                 .defineList("heavyWeaponStatTypeOrder", DEFAULT_HEAVY_WEAPON_STATS_ORDER, t -> getHeavyWeaponStatTypes().contains(t));
 
         heavyWeaponStatTypeRandomPool = builder.comment("Set of stat types from which random stat will be awarded when leveling up heavy weapons.",
                         "If empty default pool will be used (" + String.join(", ", DEFAULT_HEAVY_WEAPON_STATS_RANDOM_POOL) + ").",
                         "Allowed values: " + String.join(", ", getHeavyWeaponStatTypes()))
-                .translation("config.tinkerslevellingaddon.general.stats.heavyWeapon_stat_type_random_pool")
+                .translation("config.tinkerslevellingaddon.general.stats.heavy_weapon_stat_type_random_pool")
                 .defineList("heavyWeaponStatTypeRandomPool", DEFAULT_HEAVY_WEAPON_STATS_RANDOM_POOL, t -> getHeavyWeaponStatTypes().contains(t));
 
         heavyWeaponStatsValuesConfig(builder);
@@ -669,13 +668,13 @@ public class Config {
         lightWeaponStatTypeOrder = builder.comment("List of stat types (in order) that will be awarded when leveling up light weapons. If level is higher than list size the mod will start over.",
                         "If empty default order will be used (" + String.join(", ", DEFAULT_LIGHT_WEAPON_STATS_ORDER) + ").",
                         "Allowed values: " + String.join(", ", getLightWeaponStatTypes()))
-                .translation("config.tinkerslevellingaddon.general.stats.lightWeapon_stat_type_order")
+                .translation("config.tinkerslevellingaddon.general.stats.light_weapon_stat_type_order")
                 .defineList("lightWeaponStatTypeOrder", DEFAULT_LIGHT_WEAPON_STATS_ORDER, t -> getLightWeaponStatTypes().contains(t));
 
         lightWeaponStatTypeRandomPool = builder.comment("Set of stat types from which random stat will be awarded when leveling up light weapons.",
                         "If empty default pool will be used (" + String.join(", ", DEFAULT_LIGHT_WEAPON_STATS_RANDOM_POOL) + ").",
                         "Allowed values: " + String.join(", ", getLightWeaponStatTypes()))
-                .translation("config.tinkerslevellingaddon.general.stats.lightWeapon_stat_type_random_pool")
+                .translation("config.tinkerslevellingaddon.general.stats.light_weapon_stat_type_random_pool")
                 .defineList("lightWeaponStatTypeRandomPool", DEFAULT_LIGHT_WEAPON_STATS_RANDOM_POOL, t -> getLightWeaponStatTypes().contains(t));
 
         lightWeaponStatsValuesConfig(builder);
@@ -770,16 +769,16 @@ public class Config {
     private static void armorStatsValuesConfig(ForgeConfigSpec.Builder builder) {
         builder.comment("Armor stat values rewarded on level ups").push("armorValues");
 
-        armorArmorValue = builder.translation("tooltip.tinkerslevellingaddon.stats.armor")
+        armorArmorValue = builder.translation("tooltip.tinkerslevellingaddon.stat.armor")
                 .defineInRange(ARMOR, 0.25D, 0.1D, 10D);
 
-        armorArmorToughnessValue = builder.translation("tooltip.tinkerslevellingaddon.stats.armor_toughness")
+        armorArmorToughnessValue = builder.translation("tooltip.tinkerslevellingaddon.stat.armor_toughness")
                 .defineInRange(ARMOR_TOUGHNESS, 0.1D, 0.1D, 10D);
 
-        armorDurabilityValue = builder.translation("tooltip.tinkerslevellingaddon.stats.durability")
+        armorDurabilityValue = builder.translation("tooltip.tinkerslevellingaddon.stat.durability")
                 .defineInRange(DURABILITY, 50, 1, 1000);
 
-        armorKnockbackResistanceValue = builder.translation("tooltip.tinkerslevellingaddon.stats.knockback_resistance")
+        armorKnockbackResistanceValue = builder.translation("tooltip.tinkerslevellingaddon.stat.knockback_resistance")
                 .defineInRange(KNOCKBACK_RESISTANCE, 0.1D, 0.1D, 1D);
 
         builder.pop();
@@ -788,20 +787,20 @@ public class Config {
     private static void battlestaffStatsValuesConfig(ForgeConfigSpec.Builder builder) {
         builder.comment("Battlestaff stat values rewarded on level ups").push("battlestaffValues");
 
-        battlestaffAttackDamageValue = builder.translation("tooltip.tinkerslevellingaddon.stats.attack_damage")
+        battlestaffAttackDamageValue = builder.translation("tooltip.tinkerslevellingaddon.stat.attack_damage")
                 .defineInRange(ATTACK_DAMAGE, 0.5D, 0.1D, 10D);
 
-        battlestaffAttackSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stats.attack_speed")
+        battlestaffAttackSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stat.attack_speed")
                 .defineInRange(ATTACK_SPEED, 0.25D, 0.1D, 10D);
 
-        battlestaffDurabilityValue = builder.translation("tooltip.tinkerslevellingaddon.stats.durability")
+        battlestaffDurabilityValue = builder.translation("tooltip.tinkerslevellingaddon.stat.durability")
                 .defineInRange(DURABILITY, 50, 1, 1000);
 
-        battlestaffSpellPowerValue = builder.translation("tooltip.tinkerslevellingaddon.stats.spell_power") // to implement
-                .defineInRange(SPELL_POWER, 0.05D, 0.1D, 1D);
+        battlestaffSpellPowerValue = builder.translation("tooltip.tinkerslevellingaddon.stat.spell_power")
+                .defineInRange(SPELL_POWER, 0.05D, 0.01D, 1D);
 
-        battlestaffManaValue = builder.translation("tooltip.tinkerslevellingaddon.stats.max_mana") // to implement
-                .defineInRange(MAX_MANA, 50, 1, 1000);
+        battlestaffManaValue = builder.translation("tooltip.tinkerslevellingaddon.stat.max_mana")
+                .defineInRange(MAX_MANA, 25, 1, 1000);
 
         builder.pop();
     }
@@ -809,10 +808,10 @@ public class Config {
     private static void breakingToolStatsValuesConfig(ForgeConfigSpec.Builder builder) {
         builder.comment("Mining tool stat values rewarded on level ups").push("breakingToolValues");
 
-        breakingToolDurabilityValue = builder.translation("tooltip.tinkerslevellingaddon.stats.mining_speed")
+        breakingToolMiningSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stat.mining_speed")
                 .defineInRange(MINING_SPEED, 1D, 0.1D, 10D);
 
-        breakingToolMiningSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stats.durability")
+        breakingToolDurabilityValue = builder.translation("tooltip.tinkerslevellingaddon.stat.durability")
                 .defineInRange(DURABILITY, 50, 1, 1000);
 
         builder.pop();
@@ -821,13 +820,13 @@ public class Config {
     private static void dualHeavyWeaponToolStatsValuesConfig(ForgeConfigSpec.Builder builder) {
         builder.comment("Stat values rewarded on level ups for tools useable as heavy weapons and for breaking blocks").push("dualHeavyWeaponToolValues");
 
-        dualHeavyWeaponToolAttackDamageValue = builder.translation("tooltip.tinkerslevellingaddon.stats.attack_damage")
+        dualHeavyWeaponToolAttackDamageValue = builder.translation("tooltip.tinkerslevellingaddon.stat.attack_damage")
                 .defineInRange(ATTACK_DAMAGE, 0.5D, 0.1D, 10D);
 
-        dualHeavyWeaponToolDurabilityValue = builder.translation("tooltip.tinkerslevellingaddon.stats.mining_speed")
+        dualHeavyWeaponToolMiningSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stat.mining_speed")
                 .defineInRange(MINING_SPEED, 1D, 0.1D, 10D);
 
-        dualHeavyWeaponToolMiningSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stats.durability")
+        dualHeavyWeaponToolDurabilityValue = builder.translation("tooltip.tinkerslevellingaddon.stat.durability")
                 .defineInRange(DURABILITY, 50, 1, 1000);
 
         builder.pop();
@@ -836,13 +835,13 @@ public class Config {
     private static void heavyWeaponStatsValuesConfig(ForgeConfigSpec.Builder builder) {
         builder.comment("Heavy weapon stat values rewarded on level ups").push("heavyWeaponValues");
 
-        heavyWeaponAttackDamageValue = builder.translation("tooltip.tinkerslevellingaddon.stats.attack_damage")
+        heavyWeaponAttackDamageValue = builder.translation("tooltip.tinkerslevellingaddon.stat.attack_damage")
                 .defineInRange(ATTACK_DAMAGE, 0.5D, 0.1D, 10D);
 
-        heavyWeaponAttackSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stats.attack_speed")
+        heavyWeaponAttackSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stat.attack_speed")
                 .defineInRange(ATTACK_SPEED, 0.25D, 0.1D, 10D);
 
-        heavyWeaponDurabilityValue = builder.translation("tooltip.tinkerslevellingaddon.stats.durability")
+        heavyWeaponDurabilityValue = builder.translation("tooltip.tinkerslevellingaddon.stat.durability")
                 .defineInRange(DURABILITY, 50, 1, 1000);
 
         builder.pop();
@@ -851,13 +850,13 @@ public class Config {
     private static void lightWeaponStatsValuesConfig(ForgeConfigSpec.Builder builder) {
         builder.comment("Light weapon stat values rewarded on level ups").push("lightWeaponValues");
 
-        lightWeaponAttackDamageValue = builder.translation("tooltip.tinkerslevellingaddon.stats.attack_damage")
+        lightWeaponAttackDamageValue = builder.translation("tooltip.tinkerslevellingaddon.stat.attack_damage")
                 .defineInRange(ATTACK_DAMAGE, 0.5D, 0.1D, 10D);
 
-        lightWeaponAttackSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stats.attack_speed")
+        lightWeaponAttackSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stat.attack_speed")
                 .defineInRange(ATTACK_SPEED, 0.25D, 0.1D, 10D);
 
-        lightWeaponDurabilityValue = builder.translation("tooltip.tinkerslevellingaddon.stats.durability")
+        lightWeaponDurabilityValue = builder.translation("tooltip.tinkerslevellingaddon.stat.durability")
                 .defineInRange(DURABILITY, 50, 1, 1000);
 
         builder.pop();
@@ -868,12 +867,6 @@ public class Config {
 
         rangedAccuracyValue = builder.translation("tooltip.tinkerslevellingaddon.stat.accuracy")
                 .defineInRange(ACCURACY, 0.01D, 0.01D, 1D);
-
-        rangedAttackDamageValue = builder.translation("tooltip.tinkerslevellingaddon.stat.attack_damage")
-                .defineInRange(ATTACK_DAMAGE, 0.5D, 0.1D, 10D);
-
-        rangedAttackSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stat.attack_speed")
-                .defineInRange(ATTACK_SPEED, 0.25D, 0.1D, 10D);
 
         rangedDrawSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stat.draw_speed")
                 .defineInRange(DRAW_SPEED, 0.1D, 0.1D, 10D);
@@ -893,19 +886,19 @@ public class Config {
     private static void shieldStatsValuesConfig(ForgeConfigSpec.Builder builder) {
         builder.comment("Shield stat values rewarded on level ups").push("shieldValues");
 
-        shieldArmorToughnessValue = builder.translation("tooltip.tinkerslevellingaddon.stats.armor_toughness")
+        shieldArmorToughnessValue = builder.translation("tooltip.tinkerslevellingaddon.stat.armor_toughness")
                 .defineInRange(ARMOR_TOUGHNESS, 0.1D, 0.1D, 10D);
 
-        shieldBlockAmountValue = builder.translation("tooltip.tinkerslevellingaddon.stats.block_amount")
+        shieldBlockAmountValue = builder.translation("tooltip.tinkerslevellingaddon.stat.block_amount")
                 .defineInRange(BLOCK_AMOUNT, 5.0D, 0.1D, 100D);
 
-        shieldBlockAngleValue = builder.translation("tooltip.tinkerslevellingaddon.stats.block_angle")
+        shieldBlockAngleValue = builder.translation("tooltip.tinkerslevellingaddon.stat.block_angle")
                 .defineInRange(BLOCK_ANGLE, 2, 1, 360);
 
         shieldDurabilityValue = builder.translation("tooltip.tinkerslevellingaddon.stat.durability")
                 .defineInRange(DURABILITY, 30, 1, 1000);
 
-        shieldKnockbackResistanceValue = builder.translation("tooltip.tinkerslevellingaddon.stats.knockback_resistance")
+        shieldKnockbackResistanceValue = builder.translation("tooltip.tinkerslevellingaddon.stat.knockback_resistance")
                 .defineInRange(KNOCKBACK_RESISTANCE, 0.1D, 0.1D, 1D);
 
         builder.pop();
@@ -914,17 +907,17 @@ public class Config {
     private static void spellbookStatsValuesConfig(ForgeConfigSpec.Builder builder) {
         builder.comment("Spellbook stat values rewarded on level ups").push("spellbookValues");
 
-        spellbookSpellPowerValue = builder.translation("tooltip.tinkerslevellingaddon.stats.spell_power") // to implement
-                .defineInRange(SPELL_POWER, 0.05D, 0.1D, 10D);
+        spellbookSpellPowerValue = builder.translation("tooltip.tinkerslevellingaddon.stat.spell_power")
+                .defineInRange(SPELL_POWER, 0.05D, 0.01D, 10D);
 
-        spellbookManaValue = builder.translation("tooltip.tinkerslevellingaddon.stats.max_mana") // to implement
-                .defineInRange(MAX_MANA, 50, 1, 1000);
+        spellbookManaValue = builder.translation("tooltip.tinkerslevellingaddon.stat.max_mana")
+                .defineInRange(MAX_MANA, 25, 1, 1000);
 
-        spellbookSpellSlotsValue = builder.translation("tooltip.tinkerslevellingaddon.stats.spell_slots") // to implement
+        spellbookSpellSlotsValue = builder.translation("tooltip.tinkerslevellingaddon.stat.spell_slots")
                 .defineInRange(SPELL_SLOTS, 1, 1, 3);
 
-        spellbookCooldownReductionValue = builder.translation("tooltip.tinkerslevellingaddon.stat.cooldown_reduction") // to implement
-                .defineInRange(COOLDOWN_REDUCTION, 0.05D, 0.1D, 10D);
+        spellbookCooldownReductionValue = builder.translation("tooltip.tinkerslevellingaddon.stat.cooldown_reduction")
+                .defineInRange(COOLDOWN_REDUCTION, 0.05D, 0.01D, 10D);
 
         builder.pop();
     }
@@ -935,7 +928,7 @@ public class Config {
         staffAccuracyValue = builder.translation("tooltip.tinkerslevellingaddon.stat.accuracy")
                 .defineInRange(ACCURACY, 0.01D, 0.01D, 1D);
 
-        staffArmorValue = builder.translation("tooltip.tinkerslevellingaddon.stats.armor")
+        staffArmorValue = builder.translation("tooltip.tinkerslevellingaddon.stat.armor")
                 .defineInRange(ARMOR, 0.25D, 0.1D, 10D);
 
         staffDrawSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stat.draw_speed")
@@ -956,35 +949,35 @@ public class Config {
     private static void toolStatsValuesConfig(ForgeConfigSpec.Builder builder) {
         builder.comment("Tool stat values rewarded on level ups").push("toolValues");
 
-        toolAttackDamageValue = builder.translation("tooltip.tinkerslevellingaddon.stats.attack_damage")
+        toolAttackDamageValue = builder.translation("tooltip.tinkerslevellingaddon.stat.attack_damage")
                 .defineInRange(ATTACK_DAMAGE, 0.5D, 0.1D, 10D);
 
-        toolAttackSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stats.attack_speed")
+        toolAttackSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stat.attack_speed")
                 .defineInRange(ATTACK_SPEED, 0.25D, 0.1D, 10D);
 
-        toolDurabilityValue = builder.translation("tooltip.tinkerslevellingaddon.stats.durability")
+        toolDurabilityValue = builder.translation("tooltip.tinkerslevellingaddon.stat.durability")
                 .defineInRange(DURABILITY, 50, 1, 1000);
 
-        toolMiningSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stats.mining_speed")
+        toolMiningSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stat.mining_speed")
                 .defineInRange(MINING_SPEED, 1D, 0.1D, 10D);
 
         builder.pop();
     }
 
     private static void wandStatsValuesConfig(ForgeConfigSpec.Builder builder) {
-        builder.comment("Wand stat values rewarded on level ups").push("spellbookValues");
+        builder.comment("Wand stat values rewarded on level ups").push("wandValues");
 
-        wandSpellPowerValue = builder.translation("tooltip.tinkerslevellingaddon.stats.spell_power") // to implement
-                .defineInRange(SPELL_POWER, 0.05D, 0.1D, 10D);
+        wandSpellPowerValue = builder.translation("tooltip.tinkerslevellingaddon.stat.spell_power")
+                .defineInRange(SPELL_POWER, 0.05D, 0.01D, 10D);
 
-        wandManaValue = builder.translation("tooltip.tinkerslevellingaddon.stats.max_mana") // to implement
+        wandManaValue = builder.translation("tooltip.tinkerslevellingaddon.stat.max_mana")
                 .defineInRange(MAX_MANA, 50, 1, 1000);
 
-        wandCastingSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stats.spell_slots") // to implement
-                .defineInRange(CASTING_SPEED, 0.05D, 0.1D, 10D);
+        wandCastingSpeedValue = builder.translation("tooltip.tinkerslevellingaddon.stat.casting_speed")
+                .defineInRange(CASTING_SPEED, 0.05D, 0.01D, 10D);
 
-        wandCooldownReductionValue = builder.translation("tooltip.tinkerslevellingaddon.stat.cooldown_reduction") // to implement
-                .defineInRange(COOLDOWN_REDUCTION, 0.05D, 0.1D, 10D);
+        wandCooldownReductionValue = builder.translation("tooltip.tinkerslevellingaddon.stat.cooldown_reduction")
+                .defineInRange(COOLDOWN_REDUCTION, 0.05D, 0.01D, 10D);
 
         builder.pop();
     }
@@ -1707,10 +1700,10 @@ public class Config {
         if (stat.equals(ToolStats.DURABILITY)) {
             return battlestaffDurabilityValue.get();
         }
-        if (stat.equals(ToolStats.SPELL_POWER)) {
+        if (stat.equals(CCToolStats.SPELL_POWER)) {
             return battlestaffSpellPowerValue.get();
         }
-        if (stat.equals(ToolStats.MAX_MANA)) {
+        if (stat.equals(CCToolStats.MAX_MANA)) {
             return battlestaffManaValue.get();
         }
         return 0;
@@ -1781,12 +1774,6 @@ public class Config {
         if (stat.equals(ToolStats.DURABILITY)) {
             return rangedDurabilityValue.get();
         }
-        if (stat.equals(ToolStats.ATTACK_DAMAGE)) { //RM!!!
-            return rangedAttackDamageValue.get();
-        }
-        if (stat.equals(ToolStats.ATTACK_SPEED)) { //RM!!!
-            return rangedAttackSpeedValue.get();
-        }
         return 0;
     }
 
@@ -1810,16 +1797,16 @@ public class Config {
     }
 
     public static double getSpellbookStatValue(FloatToolStat stat) {
-        if (stat.equals(ToolStats.SPELL_POWER)) {
+        if (stat.equals(CCToolStats.SPELL_POWER)) {
             return spellbookSpellPowerValue.get();
         }
-        if (stat.equals(ToolStats.MAX_MANA)) {
+        if (stat.equals(CCToolStats.MAX_MANA)) {
             return spellbookManaValue.get();
         }
-        if (stat.equals(ToolStats.SPELL_SLOTS)) {
+        if (stat.equals(CCToolStats.SPELL_SLOTS)) {
             return spellbookSpellSlotsValue.get();
         }
-        if (stat.equals(ToolStats.COOLDOWN_REDUCTION)) {
+        if (stat.equals(CCToolStats.COOLDOWN_REDUCTION)) {
             return spellbookCooldownReductionValue.get();
         }
         return 0;
@@ -1864,16 +1851,16 @@ public class Config {
     }
 
     public static double getWandStatValue(FloatToolStat stat) {
-        if (stat.equals(ToolStats.SPELL_POWER)) {
+        if (stat.equals(CCToolStats.SPELL_POWER)) {
             return wandSpellPowerValue.get();
         }
-        if (stat.equals(ToolStats.MAX_MANA)) {
+        if (stat.equals(CCToolStats.MAX_MANA)) {
             return wandManaValue.get();
         }
-        if (stat.equals(ToolStats.CASTING_SPEED)) {
+        if (stat.equals(TinkersLevellingAddonStats.CASTING_SPEED)) {
             return wandCastingSpeedValue.get();
         }
-        if (stat.equals(ToolStats.COOLDOWN_REDUCTION)) {
+        if (stat.equals(CCToolStats.COOLDOWN_REDUCTION)) {
             return wandCooldownReductionValue.get();
         }
         return 0;

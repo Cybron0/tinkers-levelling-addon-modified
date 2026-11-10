@@ -12,6 +12,8 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -51,6 +53,7 @@ import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
 import pyre.tinkerslevellingaddon.config.Config;
 import pyre.tinkerslevellingaddon.util.ModUtil;
+import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import slimeknights.mantle.data.loadable.record.RecordLoadable;
 import slimeknights.mantle.data.loadable.record.SingletonLoader;
 import slimeknights.tconstruct.common.TinkerTags;
@@ -115,10 +118,12 @@ import slimeknights.tconstruct.tools.modules.armor.GlowWalkerModule;
 import slimeknights.tconstruct.tools.modules.combat.SpillingModule;
 import slimeknights.tconstruct.tools.modules.interaction.BucketModule;
 import slimeknights.tconstruct.tools.modules.interaction.SplashingModule;
+import pyre.tinkerslevellingaddon.setup.TinkersLevellingAddonStats;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
+import java.util.UUID;
 
 import static pyre.tinkerslevellingaddon.util.ToolLevellingUtil.*;
 import static pyre.tinkerslevellingaddon.util.ToolUtil.*;
@@ -133,6 +138,11 @@ public enum ImprovableModule implements ModifierModule, PlantHarvestModifierHook
         BlockInteractionModifierHook, ProcessLootModifierHook, ModifierRemovalHook, VolatileDataModifierHook,
         ToolStatsModifierHook {
     INSTANCE;
+
+    private static UUID CASTING_SPEED_MODIFIER_ID = UUID.randomUUID();
+
+    private static final String CASTING_SPEED_MODIFIER_NAME =
+            "Tinkers' Levelling Addon Casting Speed";
 
     private static final List<ModuleHook<?>> DEFAULT_HOOKS =
             HookProvider.<ImprovableModule>defaultHooks(ModifierHooks.PLANT_HARVEST, ModifierHooks.SHEAR_ENTITY,
@@ -212,6 +222,8 @@ public enum ImprovableModule implements ModifierModule, PlantHarvestModifierHook
         for (ItemStack itemStack : player.getInventory().offhand) {
             processPendingLevelUp(player, itemStack);
         }
+
+        updateWandCastingSpeed(player);
     }
 
     @Override
@@ -228,6 +240,8 @@ public enum ImprovableModule implements ModifierModule, PlantHarvestModifierHook
             addExperience(tool, 1 + Config.bonusHarvestingXp.get());
         }
     }
+    // Doesn't work properly. Kama and Scythe harvest in a bigger radius but only get 1 xp and if you have a mod that
+    // harvests and replants with M2 it won't give xp at all when harvesting that way.
 
     @Override
     public void afterShearEntity(IToolStackView tool, ModifierEntry modifier, Player player, Entity entity,
@@ -1009,5 +1023,59 @@ public enum ImprovableModule implements ModifierModule, PlantHarvestModifierHook
         if (canPlaceBucketFluid(context, player, fluidStack)) {
             addExperience(tool, 1 + Config.bonusBucketingXp.get());
         }
+    }
+
+    private static void updateWandCastingSpeed(ServerPlayer player) {
+        AttributeInstance attribute = player.getAttribute(AttributeRegistry.CAST_TIME_REDUCTION.get());
+        if (attribute == null) {
+            return;
+        }
+
+        double castingSpeed =
+                getWandCastingSpeed(player.getMainHandItem()) +
+                        getWandCastingSpeed(player.getOffhandItem());
+
+        AttributeModifier existing = attribute.getModifier(CASTING_SPEED_MODIFIER_ID);
+
+        // collision handling
+        if (existing != null &&
+                !existing.getName().equals(CASTING_SPEED_MODIFIER_NAME)) {
+            return;
+        }
+
+        // Remove the modifier if neither hand contributes a bonus.
+        if (castingSpeed == 0) {
+            if (existing != null) {
+                attribute.removeModifier(CASTING_SPEED_MODIFIER_ID);
+            }
+            return;
+        }
+
+        // Avoid removing and re-adding an unchanged modifier every tick.
+        if (existing != null &&
+                existing.getOperation() == AttributeModifier.Operation.MULTIPLY_BASE &&
+                Double.compare(existing.getAmount(), castingSpeed) == 0) {
+            return;
+        }
+
+        if (existing != null) {
+            attribute.removeModifier(CASTING_SPEED_MODIFIER_ID);
+        }
+
+        attribute.addTransientModifier(new AttributeModifier(
+                CASTING_SPEED_MODIFIER_ID,
+                "Tinkers' Levelling Addon Wand Casting Speed",
+                castingSpeed,
+                AttributeModifier.Operation.MULTIPLY_BASE
+        ));
+    }
+
+    private static double getWandCastingSpeed(ItemStack stack) {
+        if (stack.isEmpty() || !hasImprovable(stack)) {
+            return 0;
+        }
+
+        ToolStack tool = ToolStack.from(stack);
+        return tool.getStats().get(TinkersLevellingAddonStats.CASTING_SPEED);
     }
 }
